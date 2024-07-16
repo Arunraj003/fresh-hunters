@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Your Cart Items</h1>
+    <div id="cart-items-container"></div>
+    <h2 id="total-price"></h2>
+    <button id="order-button" class="btn">Order Now</button>
+
+    <script>
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const totalPriceElement = document.getElementById('total-price');
+
+        function updateCartDisplay() {
+            cartItemsContainer.innerHTML = '';
+            let totalPrice = 0;
+
+            if (cartItems.length === 0) {
+                cartItemsContainer.innerHTML = '<p>No items in your cart.</p>';
+                totalPriceElement.textContent = '';
+                return;
+            }
+
+            cartItems.forEach((item, index) => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                const itemTotalPrice = (item.price * item.quantity).toFixed(2);
+                totalPrice += item.price * item.quantity;
+
+                itemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" style="width:50px;">
+                    <p>${item.name} (Quantity: ${item.quantity}) - Price: $${itemTotalPrice}</p>
+                    <button class="btn delete-item" data-index="${index}">Delete</button>
+                `;
+                cartItemsContainer.appendChild(itemElement);
+            });
+
+            totalPriceElement.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+        }
+
+        // Handle delete item
+        cartItemsContainer.addEventListener('click', function(event) {
+            if (event.target.classList.contains('delete-item')) {
+                const index = event.target.getAttribute('data-index');
+                cartItems.splice(index, 1); // Remove item from cart
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                updateCartDisplay(); // Refresh cart display
+            }
+        });
+
+        // Handle order button
+        document.getElementById('order-button').addEventListener('click', function() {
+            if (cartItems.length === 0) {
+                alert("Your cart is empty.");
+            } else {
+                alert("Order placed successfully!"); // This can be replaced with actual order processing logic
+                localStorage.removeItem('cartItems'); // Clear cart
+                updateCartDisplay(); // Refresh cart display
+                window.location.href = 'order-payment.html'; // Redirect to payment page
+            }
+        });
+
+        updateCartDisplay(); // Initial display
+    </script>
+</body>
+</html>

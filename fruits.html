@@ -11,15 +11,68 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+        import {
+            getAuth,
+            onAuthStateChanged,
+            signOut,
+        } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBN9L7Gr7-oXB_JyTP7rEVYVEiQRY5bXls",
+            authDomain: "fresh-hunters.firebaseapp.com",
+            projectId: "fresh-hunters",
+            storageBucket: "fresh-hunters.appspot.com",
+            messagingSenderId: "411275754727",
+            appId: "1:411275754727:web:474fbaebec6babdba7b642",
+            measurementId: "G-LJZT6LKKE9",
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app); // Initialize Firebase Auth
+
+        // Check if user is signed in
+        onAuthStateChanged(auth, (user) => {
+            if (user == login) {
+                document.getElementById(
+                    alert(`Welcome, ${user.email}`)
+                )
+            } else {
+                window.location.href = "login.html";
+            }
+        });
+
+        // Logout function
+        window.logout = function () {
+            signOut(auth)
+                .then(() => {
+                    window.location.href = "login.html";
+                })
+                .catch((error) => {
+                    alert(error.message);
+                });
+        };
+    </script>
+    <link rel="icon" href="img1/fresh-hunters.png" />
 </head>
 
 <body>
+    <!-- header starts here -->
     <div class="para">
         <div class="page-title">Fresh Hunters</div>
     </div>
 
+    <!-- navbar  -->
     <div class="menu">
-        <a href="#" class="logo">Fresh Hunters <img src="img1/fresh-hunters.png" alt="logo" /></a>
+        <a href="#" class="logo">
+            Fresh Hunters <img src="img1/fresh-hunters.png" alt="logo" />
+        </a>
         <ul class="menu-ul">
             <a href="Home.html" class="a-menu">
                 <li>Home</li>
@@ -27,42 +80,33 @@
             <a href="vegetables.html" class="a-menu">
                 <li>Vegetables</li>
             </a>
-            <a href="fruits.html" class="a-menu">
-                <li>Fruits</li>
-            </a>
-            <a href="cart.html" class="a-menu">
-                <li><i class="fas fa-shopping-cart"></i></li>
+            <a href="cart.html" class="a-menu" id="items">
+                <li>Your Items</i>
+                </li>
             </a>
             <a onClick="logout()" class="a-menu">
                 <li>LogOut</li>
             </a>
         </ul>
     </div>
-    
-    <div class="intro" id="home">
-        <h1>WHY FRUITS AND VEGETABLES ?</h1>
-        “The sweetest fruits grow at the top of a tree so that only those who deserve them can reach them.”<br>
-        <p>In the ruins of a prehistoric village near Jericho, in the West Bank, scientists have found remains of figs
-            that they say appear to be the earliest known cultivated fruit crop — perhaps the first evidence anywhere of
-            domesticated food production at the dawn of agriculture. The figs were grown some 11,400 years ago.
-            And Next Will Be Banana And Mango Was Near To be 10,000 Years Ago.
-            <br>
-        </p>
-        <img src="img1/f" alt="intro" />
+    <!-- header ends here  -->
+    <div class="heading">
+        <h1>Fruits</h1>
     </div>
-
-    <!--------FRUITS PAGE STARTS HERE----->
     <div class="row">
-        <div class="para">
-            <div class="title">FRUIT AND VEGETABLES WEBSITE</div>
-        </div>
         <div class="card" id="fruits">
             <img src="img1/apple.png">
             <h4>Apple</h4>
             <p>An apple is a crunchy, bright-colored fruit, one of the most popular in the United States. You’ve
                 probably heard the age-old saying,
-            <p><b>“An apple a day keeps the doctor away.”</b></p>
             </p>
+            <div class="quantity-container">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" class="quantity-input">
+            </div>
+              <!-- Price -->
+        <p><strong>Price: $1.00</strong></p>
+            <button class="btn add-to-cart">Add to Cart</button>
             <a href="Apple.html" class="btn">Click Here</a>
         </div>
         <div class="card" id="fruits">
@@ -350,38 +394,11 @@
         </div>
         <!--------FRUITS END HERE--------->
         <!--------FOOTER STARTS HERE--------->
-        <div class="parallex">
-            <div class="footer">
-                <div class="quick-links">
-                    <div>Locations</div>
-                    <ul>
-                        <li><a href="" class="a-links">Address 1</a></li>
-                        <li><a href="" class="a-links">Address 2</a></li>
-                        <li><a href="" class="a-links">Address 2</a></li>
-                    </ul>
-                </div>
-                <div class="quick-links">
-                    <div>Careers</div>
-                    <ul>
-                        <li><a href="" class="a-links">Packing Staff</a></li>
-                        <li><a href="" class="a-links">Delivery Agents</a></li>
-                        <li><a href="" class="a-links">Shelf Fillers</a></li>
-                    </ul>
-                </div>
-                <div class="quick-links">
-                    <div>Quick Links</div>
-                    <ul>
-                        <li><a href="" class="a-links">Contact Us</a></li>
-                        <li><a href="" class="a-links">FAQ</a></li>
-                        <li><a href="" class="a-links">Help</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="copyrights">
-            <img src="" id="m" />2023 By TEAM 2
-        </div>
+
         <!--------FOOTER END HERE--------->
+
+
+        <script src="cart.js"></script>
         <!--------FRUIT PAGE END HERE--------->
 </body>
 

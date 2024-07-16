@@ -1,196 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fresh Hunters HOME</title>
-    <link rel="stylesheet" href="fruits.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Heebo&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
 
-    <link rel="icon" href="img1/fresh-hunters.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fresh Hunters HOME</title>
+  <link rel="stylesheet" href="fruits.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
-      import {
-        getAuth,
-        onAuthStateChanged,
-        signOut,
-      } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+  <link rel="icon" href="img1/fresh-hunters.png" />
 
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-        apiKey: "AIzaSyBN9L7Gr7-oXB_JyTP7rEVYVEiQRY5bXls",
-        authDomain: "fresh-hunters.firebaseapp.com",
-        projectId: "fresh-hunters",
-        storageBucket: "fresh-hunters.appspot.com",
-        messagingSenderId: "411275754727",
-        appId: "1:411275754727:web:474fbaebec6babdba7b642",
-        measurementId: "G-LJZT6LKKE9",
-      };
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+    import {
+      getAuth,
+      onAuthStateChanged,
+      signOut,
+    } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
 
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-      const auth = getAuth(app); // Initialize Firebase Auth
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBN9L7Gr7-oXB_JyTP7rEVYVEiQRY5bXls",
+      authDomain: "fresh-hunters.firebaseapp.com",
+      projectId: "fresh-hunters",
+      storageBucket: "fresh-hunters.appspot.com",
+      messagingSenderId: "411275754727",
+      appId: "1:411275754727:web:474fbaebec6babdba7b642",
+      measurementId: "G-LJZT6LKKE9",
+    };
 
-      // Check if user is signed in
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          document.getElementById(
-            "welcome-message"
-          ).innerText = `Welcome, ${user.email}`;
-        } else {
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth(app); // Initialize Firebase Auth
+
+    // Check if user is signed in
+    onAuthStateChanged(auth, (user) => {
+      if (user == login) {
+        document.getElementById(
+          alert(`Welcome, ${user.email}`)
+        )
+      } else {
+        window.location.href = "login.html";
+      }
+    });
+
+    // Logout function
+    window.logout = function () {
+      signOut(auth)
+        .then(() => {
           window.location.href = "login.html";
-        }
-      });
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    };
+  </script>
+</head>
 
-      // Logout function
-      window.logout = function () {
-        signOut(auth)
-          .then(() => {
-            window.location.href = "login.html";
-          })
-          .catch((error) => {
-            alert(error.message);
-          });
-      };
-    </script>
-  </head>
+<body>
 
-  <body>
-    <div class="para">
-      <div class="page-title">Fresh Hunters</div>
+
+  <!-- header starts here -->
+  <div class="para">
+    <div class="page-title">Fresh Hunters</div>
+  </div>
+
+  <!-- navbar  -->
+  <div class="menu">
+    <a href="#" class="logo">
+      Fresh Hunters <img src="img1/fresh-hunters.png" alt="logo" />
+    </a>
+    <ul class="menu-ul">
+      <a href="Home.html" class="a-menu">
+        <li>Home</li>
+      </a>
+      <a href="vegetables.html" class="a-menu">
+        <li>Vegetables</li>
+      </a>
+      <a href="fruits.html" class="a-menu">
+        <li>Fruits</li>
+      </a>
+      <a onClick="logout()" class="a-menu">
+        <li>LogOut</li>
+      </a>
+    </ul>
+  </div>
+  <!-- header ends here  -->
+
+
+  <div class="intro" id="home">
+    <h1>WHY FRUITS AND VEGETABLES ?</h1>
+    <p>
+      <span>
+        “The sweetest fruits grow at the top of a tree so that only those who
+        deserve them can reach them.”<br />
+      </span>
+      In the ruins of a prehistoric village near Jericho, in the West Bank,
+      scientists have discovered remains of figs that appear to be the
+      earliest known cultivated fruit crop. These figs, grown approximately
+      11,400 years ago, represent what may be the first evidence of
+      domesticated food production at the dawn of agriculture.
+      <br />
+      discovery marks a significant milestone in human history as communities
+      began transitioning from foraging to farming, laying the foundation for
+      settled societies and the rise of civilizations. The cultivation of figs
+      suggests early humans were starting to understand and manipulate their
+      environment to produce food. <br />Further research indicates that other
+      fruit crops, such as bananas and mangoes, were likely cultivated around
+      10,000 years ago.
+
+      <br />These findings highlight the expanding agricultural knowledge of
+      early communities and provide valuable insights into the origins of
+      agriculture and the development of human societies.
+      <br />
+    </p>
+
+    <h1>Our Services</h1>
+    <div class="card" id="fruits">
+      <img src="img1/vegetable.png" />
+      <h4>Vegetables</h4>
+      <p>
+        Vegetables are essential components of a healthy diet, providing a
+        wealth of vitamins, minerals, and antioxidants crucial for maintaining
+        optimal health.
+      </p>
+      <a href="vegetables.html" class="btn">Enter Here</a>
     </div>
+    <div class="card" id="fruits">
+      <img src="img1/fruits.png" />
+      <h4>Fruits</h4>
+      <p>
+        Fruit is the mature ovary of a flowering plant, usually containing
+        seeds. They come in a wide range of flavors, textures, and nutritional
+        profiles, providing essential vitamins, minerals, and fiber. Fruits
+        can be consumed fresh, dried, or processed into various products like
+        juices, jams, and desserts.
+      </p>
+      <a href="fruits.html" class="btn">Enter Here</a>
+    </div>
+  </div>
+  <!--------FRUITS END HERE--------->
 
-    <!-- navbar  -->
-    <div class="menu">
-      <a href="#" class="logo"
-        >Fresh Hunters <img src="img1/fresh-hunters.png" alt="logo"
-      /></a>
-      <ul class="menu-ul">
-        <a href="Home.html" class="a-menu">
-          <li>Home</li>
+  <!--------FOOTER STARTS HERE--------->
+
+
+  <div class="footer">
+    <h1>Fresh Hunters</h1>
+    <div class="quick-links">
+      <div>Our Projects</div>
+      <ul>
+        <li><a href="#" class="a-links">Fresh Hunters</a></li>
+        <li><a href="#" class="a-links">Food Delivery</a></li>
+        <li><a href="#" class="a-links">University Website</a></li>
+      </ul>
+    </div>
+    <div class="quick-links">
+      <div>Quick Links</div>
+      <ul>
+        <li><a href="https://chat.whatsapp.com/JrRFFw4NYzFGMdvUPLYnhT" class="a-links">Contact Us</a></li>
+        <li><a href="faq.html" class="a-links">FAQ</a></li>
+        <li><a href="Help.html" class="a-links">Help</a></li>
+      </ul>
+    </div>
+    <div class="quick-links">
+      <div>Contact Information</div>
+      <ul>
+        <li>
+          <a href="">
+            Email: arunr6506@gmail.com
+          </a>
+        </li>
+        <li>
+          <a href="">
+            Phone: 9361995841
+        </li>
         </a>
-        <a href="vegetables.html" class="a-menu">
-          <li>Vegetables</li>
-        </a>
-        <a href="fruits.html" class="a-menu">
-          <li>Fruits</li>
-        </a>
-        <a onClick="logout()" class="a-menu">
-          <li>LogOut</li>
+        <li>
+          <a href="">
+            Address : Tiruvannamalai,Tamil Nadu, India
+        </li>
         </a>
       </ul>
     </div>
-
-    <div class="intro" id="home">
-      <h1>WHY FRUITS AND VEGETABLES ?</h1>
-      <p>
-        <span>
-          “The sweetest fruits grow at the top of a tree so that only those who
-          deserve them can reach them.”<br />
-        </span>
-        In the ruins of a prehistoric village near Jericho, in the West Bank,
-        scientists have discovered remains of figs that appear to be the
-        earliest known cultivated fruit crop. These figs, grown approximately
-        11,400 years ago, represent what may be the first evidence of
-        domesticated food production at the dawn of agriculture.
-        <br />
-        discovery marks a significant milestone in human history as communities
-        began transitioning from foraging to farming, laying the foundation for
-        settled societies and the rise of civilizations. The cultivation of figs
-        suggests early humans were starting to understand and manipulate their
-        environment to produce food. <br />Further research indicates that other
-        fruit crops, such as bananas and mangoes, were likely cultivated around
-        10,000 years ago.
-
-        <br />These findings highlight the expanding agricultural knowledge of
-        early communities and provide valuable insights into the origins of
-        agriculture and the development of human societies.
-        <br />
-      </p>
-
-      <h1>Our Services</h1>
-      <div class="card" id="fruits">
-        <img src="img1/vegetable.png" />
-        <h4>Vegetables</h4>
-        <p>
-          Vegetables are essential components of a healthy diet, providing a
-          wealth of vitamins, minerals, and antioxidants crucial for maintaining
-          optimal health. They are rich in dietary fiber, which supports
-          digestive health and helps regulate blood sugar levels.From leafy
-          greens like spinach and kale to vibrant vegetables such as bell
-          peppers and carrots, each type offers unique nutritional benefits.
-        </p>
-        <a href="vegetables.html" class="btn">Enter Here</a>
-      </div>
-      <div class="card" id="fruits">
-        <img src="img1/wine grapes.png" />
-        <h4>Fruits</h4>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet
-          odit optio ducimus adipisci ipsum?
-        </p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-        <a href="fruits.html" class="btn">Enter Here</a>
-      </div>
+    <div class="quick-links">
+      <div>Follow Us</div>
+      <ul>
+        <li><a href="https://www.twitter.com" class="a-links"><i class="fab fa-whatsapp"></i> Whatsapp</a></li>
+        <li><a href="https://www.instagram.com" class="a-links"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="https://www.linkedin.com" class="a-links"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+      </ul>
     </div>
-    <!--------FRUITS END HERE--------->
+  </div>
 
-    <!--------FOOTER STARTS HERE--------->
-    <div class="parallex">
-      <div class="footer">
-        <div class="quick-links">
-          <div>Locations</div>
-          <ul>
-            <li><a href="" class="a-links">Address 1</a></li>
-            <li><a href="" class="a-links">Address 2</a></li>
-            <li><a href="" class="a-links">Address 2</a></li>
-          </ul>
-        </div>
-        <div class="quick-links">
-          <div>Careers</div>
-          <ul>
-            <li><a href="" class="a-links">Packing Staff</a></li>
-            <li><a href="" class="a-links">Delivery Agents</a></li>
-            <li><a href="" class="a-links">Shelf Fillers</a></li>
-          </ul>
-        </div>
-        <div class="quick-links">
-          <div>Quick Links</div>
-          <ul>
-            <li>
-              <a
-                href="https://chat.whatsapp.com/JrRFFw4NYzFGMdvUPLYnhT"
-                class="a-links"
-                >Contact Us</a
-              >
-            </li>
-            <li><a href="" class="a-links">FAQ</a></li>
-            <li><a href="Help.html" class="a-links">Help</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="copyrights">
-      <img src="" id="m" />2023 By TEAM 2
-    </div>
-    <!--------FOOTER END HERE--------->
-    <!--------FRUIT PAGE END HERE--------->
-  </body>
+  <div class="copyrights">
+    <h1>
+      2023 Fresh Hunters
+      <i class="fas fa-copyright"></i> TEAM 2
+    </h1>
+  </div>
+  <!--------FOOTER END HERE--------->
+  <!--------FRUIT PAGE END HERE--------->
+</body>
+
 </html>
