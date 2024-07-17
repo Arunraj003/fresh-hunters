@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Fresh Hunters Your Cart</title>
+    <link rel="stylesheet" href="cart.css">
 </head>
+
 <body>
     <h1>Your Cart Items</h1>
-    <div id="cart-items-container"></div>
+    <div id="cart-items-container" class="container"></div>
     <h2 id="total-price"></h2>
     <button id="order-button" class="btn">Order Now</button>
-
     <script>
         let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
         const cartItemsContainer = document.getElementById('cart-items-container');
@@ -35,7 +36,9 @@
 
                 itemElement.innerHTML = `
                     <img src="${item.image}" alt="${item.name}" style="width:50px;">
-                    <p>${item.name} (Quantity: ${item.quantity}) - Price: $${itemTotalPrice}</p>
+                    <p>${item.name} - $${item.price.toFixed(2)} each</p>
+                    <input type="number" class="quantity-input" data-index="${index}" value="${item.quantity}" min="1">
+                    <p>Price: $${itemTotalPrice}</p>
                     <button class="btn delete-item" data-index="${index}">Delete</button>
                 `;
                 cartItemsContainer.appendChild(itemElement);
@@ -45,7 +48,7 @@
         }
 
         // Handle delete item
-        cartItemsContainer.addEventListener('click', function(event) {
+        cartItemsContainer.addEventListener('click', function (event) {
             if (event.target.classList.contains('delete-item')) {
                 const index = event.target.getAttribute('data-index');
                 cartItems.splice(index, 1); // Remove item from cart
@@ -54,8 +57,19 @@
             }
         });
 
+        // Handle quantity change
+        cartItemsContainer.addEventListener('input', function (event) {
+            if (event.target.classList.contains('quantity-input')) {
+                const index = event.target.getAttribute('data-index');
+                const newQuantity = parseInt(event.target.value);
+                cartItems[index].quantity = newQuantity;
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                updateCartDisplay(); // Refresh cart display
+            }
+        });
+
         // Handle order button
-        document.getElementById('order-button').addEventListener('click', function() {
+        document.getElementById('order-button').addEventListener('click', function () {
             if (cartItems.length === 0) {
                 alert("Your cart is empty.");
             } else {
@@ -69,4 +83,5 @@
         updateCartDisplay(); // Initial display
     </script>
 </body>
+
 </html>

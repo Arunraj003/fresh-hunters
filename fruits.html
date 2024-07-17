@@ -12,6 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="icon" href="img1/fresh-hunters.png" />
+
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
@@ -80,9 +86,29 @@
             <a href="vegetables.html" class="a-menu">
                 <li>Vegetables</li>
             </a>
-            <a href="cart.html" class="a-menu" id="items">
-                <li>Your Items</i>
-                </li>
+            <a href="cart.html" class="a-menu">
+                <li>Your Items</li>
+            </a>
+            <a onClick="logout()" class="a-menu">
+                <li>LogOut</li>
+            </a>
+        </ul>
+    </div>
+    <!-- sidebar -->
+    <div class="sidebar" id="sidebar">
+        <i class="fa fa-bars"></i>
+    </div>
+    <div class="box" id="box">
+        <i class="fa fa-xmark" id="close"></i>
+        <ul class="menu-ul">
+            <a href="Home.html" class="a-menu">
+                <li>Home</li>
+            </a>
+            <a href="vegetables.html" class="a-menu">
+                <li>Vegetables</li>
+            </a>
+            <a href="cart.html" class="a-menu">
+                <li>Your Items</li>
             </a>
             <a onClick="logout()" class="a-menu">
                 <li>LogOut</li>
@@ -90,316 +116,445 @@
         </ul>
     </div>
     <!-- header ends here  -->
+
+
+    <!-- CARDS HERE -->
     <div class="heading">
-        <h1>Fruits</h1>
+        <h1>Fruits Page</h1>
     </div>
-    <div class="row">
-        <div class="card" id="fruits">
-            <img src="img1/apple.png">
-            <h4>Apple</h4>
-            <p>An apple is a crunchy, bright-colored fruit, one of the most popular in the United States. You’ve
-                probably heard the age-old saying,
-            </p>
-            <div class="quantity-container">
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" value="1" class="quantity-input">
-            </div>
-              <!-- Price -->
+    <div class="card" id="fruits">
+        <h4>Apple</h4>
+        <img src="img1/apple.png" alt="Apple">
+        <p>An apple is a crunchy, bright-colored fruit, one of the most popular in the United States. You’ve
+            probably heard the age-old saying,
+        </p>
         <p><strong>Price: $1.00</strong></p>
-            <button class="btn add-to-cart">Add to Cart</button>
+        <input type="number" id="quantity-banana" value="1" min="1">
+        <button class="add-to-cart" data-name="Apple" data-price="0.50" data-image="img1/banana.png">Add to
+            Cart</button>
+        <a href="Apple.html" class="btn">Click Here</a>
+    </div>
+    <div class="card" id="fruits">
+        <h4>Banana</h4>
+        <img src="img1/banana.png" alt="Banana">
+        <p>An apple is a crunchy, bright-colored fruit, one of the most popular in the United States. You’ve
+            probably heard the age-old saying,
+        </p>
+        <p><strong>Price: $1.00</strong></p>
+        <input type="number" id="quantity-banana" value="1" min="1">
+        <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+            Cart</button>
+        <a href="Apple.html" class="btn">Click Here</a>
+    </div>
+
+    <div class="card" id="fruits">
+        <img src="img1/apricot.png">
+        <h4>Apricot</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+            adipisci
+            ipsum?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+        <p><strong>Price: $1.00</strong></p>
+        <input type="number" id="quantity-banana" value="1" min="1">
+        <button class="add-to-cart" data-name="Apricot" data-price="0.50" data-image="img1/banana.png">Add to
+            Cart</button>
+        <a href="Apple.html" class="btn">Click Here</a>
+    </div>
+
+    <div class="card" id="fruits">
+        <img src="img1/avocado.png">
+        <h4>Avocado</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+            adipisci
+            ipsum?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+        <p><strong>Price: $1.00</strong></p>
+        <input type="number" id="quantity-banana" value="1" min="1">
+        <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+            Cart</button>
+        <a href="Apple.html" class="btn">Click Here</a>
+    </div>
+    <div class="card" id="fruits">
+        <img src="img1/banana.png">
+        <h4>Banana</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+            adipisci
+            ipsum?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+        <p><strong>Price: $1.00</strong></p>
+        <input type="number" id="quantity-banana" value="1" min="1">
+        <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+            Cart</button>
+        <a href="Apple.html" class="btn">Click Here</a>
+    </div>
+    <!------------ ROW 2 ------------>
+    <div class="row2">
+        <div class="card" id="fruits">
+            <img src="img1/blue berry.png">
+            <h4>Blue Berry</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
             <a href="Apple.html" class="btn">Click Here</a>
         </div>
         <div class="card" id="fruits">
-            <img src="img1/apricot.png">
-            <h4>Apricot</h4>
+            <img src="img1/cherry.png">
+            <h4>Cherry</h4>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
                 adipisci
                 ipsum?</p>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-            <a href="" class="btn">Click Here</a>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-cherry" value="1" min="1">
+            <button class="add-to-cart" data-name="Cherry" data-price="0.50" data-image="img1/cherry.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
         </div>
         <div class="card" id="fruits">
-            <img src="img1/avocado.png">
-            <h4>Avocado</h4>
+            <img src="img1/cran berry.png">
+            <h4>Cran Berry</h4>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
                 adipisci
                 ipsum?</p>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-            <a href="" class="btn">Click Here</a>
+            <p><strong>Price: $1.00</strong></p>
+        <input type="number" id="quantity-banana" value="1" min="1">
+        <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+            Cart</button>
+        <a href="Apple.html" class="btn">Click Here</a>
         </div>
         <div class="card" id="fruits">
-            <img src="img1/banana.png">
-            <h4>Banana</h4>
+            <img src="img1/custard apple.png">
+            <h4>custard apple</h4>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
                 adipisci
                 ipsum?</p>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-            <a href="" class="btn">Click Here</a>
-        </div>
-        <!------------ ROW 2 ------------>
-        <div class="row2">
-            <div class="card" id="fruits">
-                <img src="img1/blue berry.png">
-                <h4>Blue Berry</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/cherry.png">
-                <h4>Cherry</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/cran berry.png">
-                <h4>Cran Berry</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/custard apple.png">
-                <h4>custard apple</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-        </div>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>        </div>
+    </div>
 
-        <!------------ ROW 3 ------------>
-        <div class="row3">
-            <div class="card" id="fruits">
-                <img src="img1/dragon 1.png">
-                <h4>dragon Fruit</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/fig.png">
-                <h4>figFruit</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/grape fruit.png">
-                <h4>grape Fruit</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/green grapes.png">
-                <h4>green grapes</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
+    <!------------ ROW 3 ------------>
+    <div class="row3">
+        <div class="card" id="fruits">
+            <img src="img1/dragon 1.png">
+            <h4>dragon Fruit</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+        <input type="number" id="quantity-banana" value="1" min="1">
+        <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+            Cart</button>
+        <a href="Apple.html" class="btn">Click Here</a>
         </div>
-        <!------------ ROW 4 ------------>
-        <div class="row4">
-            <div class="card" id="fruits">
-                <img src="img1/guava 1.png">
-                <h4>guava </h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/jack fruit.png">
-                <h4>jack fruit</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/kiwi.png">
-                <h4>kiwi</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/lemon.png">
-                <h4>lemon</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
+        <div class="card" id="fruits">
+            <img src="img1/fig.png">
+            <h4>figFruit</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+        <input type="number" id="quantity-banana" value="1" min="1">
+        <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+            Cart</button>
+        <a href="Apple.html" class="btn">Click Here</a>
         </div>
-        <!------------ ROW 5 ------------>
-        <div class="row5">
-            <div class="card" id="fruits">
-                <img src="img1/litchie.png">
-                <h4>litchie</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/mango.png">
-                <h4>mango</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/mulberry.png">
-                <h4>mulberry</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/orange.png">
-                <h4>orange</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
+        <div class="card" id="fruits">
+            <img src="img1/grape fruit.png">
+            <h4>grape Fruit</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
         </div>
-        <!------------ ROW 6 ------------>
-        <div class="row6">
-            <div class="card" id="fruits">
-                <img src="img1/papaya.png">
-                <h4>papaya</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/peach 2.png">
-                <h4>peachFruit</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/pine apple.png">
-                <h4>pine apple</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/plum.png">
-                <h4>plum</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
+        <div class="card" id="fruits">
+            <img src="img1/green grapes.png">
+            <h4>green grapes</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+        <input type="number" id="quantity-banana" value="1" min="1">
+        <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+            Cart</button>
+        <a href="Apple.html" class="btn">Click Here</a>
         </div>
-        <!------------ ROW 7 ------------>
-        <div class="row7">
-            <div class="card" id="fruits">
-                <img src="img1/pome.png">
-                <h4>pomogranate</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/rasp berry.png">
-                <h4>rasp berry</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/red grapes.png">
-                <h4>red grapes</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/strawberry.png">
-                <h4>strawberry</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
+    </div>
+    <!------------ ROW 4 ------------>
+    <div class="row4">
+        <div class="card" id="fruits">
+            <img src="img1/guava 1.png">
+            <h4>guava </h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+        <input type="number" id="quantity-banana" value="1" min="1">
+        <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+            Cart</button>
+        <a href="Apple.html" class="btn">Click Here</a>
         </div>
-        <!------------ ROW 8 ------------>
-        <div class="row8">
-            <div class="card" id="fruits">
-                <img src="img1/watermelon.png">
-                <h4>watermelon</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
-            <div class="card" id="fruits">
-                <img src="img1/wine grapes.png">
-                <h4>wine grapes</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
-                    adipisci
-                    ipsum?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="" class="btn">Click Here</a>
-            </div>
+        <div class="card" id="fruits">
+            <img src="img1/jack fruit.png">
+            <h4>jack fruit</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+        <input type="number" id="quantity-banana" value="1" min="1">
+        <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+            Cart</button>
+        <a href="Apple.html" class="btn">Click Here</a>
         </div>
-        <!--------FRUITS END HERE--------->
-        <!--------FOOTER STARTS HERE--------->
+        <div class="card" id="fruits">
+            <img src="img1/kiwi.png">
+            <h4>kiwi</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
+        </div>
+        <div class="card" id="fruits">
+            <img src="img1/lemon.png">
+            <h4>lemon</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
+        </div>
+    </div>
+    <!------------ ROW 5 ------------>
+    <div class="row5">
+        <div class="card" id="fruits">
+            <img src="img1/litchie.png">
+            <h4>litchie</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
+        </div>
+        <div class="card" id="fruits">
+            <img src="img1/mango.png">
+            <h4>mango</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
+        </div>
+        <div class="card" id="fruits">
+            <img src="img1/mulberry.png">
+            <h4>mulberry</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
+        </div>
+        <div class="card" id="fruits">
+            <img src="img1/orange.png">
+            <h4>orange</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
+        </div>
+    </div>
+    <!------------ ROW 6 ------------>
+    <div class="row6">
+        <div class="card" id="fruits">
+            <img src="img1/papaya.png">
+            <h4>papaya</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
+        </div>
+        <div class="card" id="fruits">
+            <img src="img1/peach 2.png">
+            <h4>peachFruit</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
+        </div>
+        <div class="card" id="fruits">
+            <img src="img1/pine apple.png">
+            <h4>pine apple</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
+        </div>
+        <div class="card" id="fruits">
+            <img src="img1/plum.png">
+            <h4>plum</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
+        </div>
+    </div>
+    <!------------ ROW 7 ------------>
+    <div class="row7">
+        <div class="card" id="fruits">
+            <img src="img1/pome.png">
+            <h4>pomogranate</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
+        <div class="card" id="fruits">
+            <img src="img1/rasp berry.png">
+            <h4>rasp berry</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
+        </div>
+        <div class="card" id="fruits">
+            <img src="img1/red grapes.png">
+            <h4>red grapes</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
+        </div>
+        <div class="card" id="fruits">
+            <img src="img1/strawberry.png">
+            <h4>strawberry</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
+        </div>
+    </div>
+    <!------------ ROW 8 ------------>
+    <div class="row8">
+        <div class="card" id="fruits">
+            <img src="img1/watermelon.png">
+            <h4>watermelon</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
+        </div>
+        <div class="card" id="fruits">
+            <img src="img1/wine grapes.png">
+            <h4>wine grapes</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eveniet odit optio ducimus
+                adipisci
+                ipsum?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p><strong>Price: $1.00</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="0.50" data-image="img1/banana.png">Add to
+                Cart</button>
+            <a href="Apple.html" class="btn">Click Here</a>
+        </div>
+    </div>
+    <!--------FRUITS END HERE--------->
 
-        <!--------FOOTER END HERE--------->
+
+    <!--------FOOTER STARTS HERE--------->
+    <!--------FOOTER END HERE--------->
 
 
-        <script src="cart.js"></script>
-        <!--------FRUIT PAGE END HERE--------->
+    <script src="cart.js"></script>
+    <script src="navbar.js"></script>
+    <!--------FRUIT PAGE END HERE--------->
 </body>
 
 </html>
