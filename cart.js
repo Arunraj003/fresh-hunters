@@ -1,7 +1,7 @@
 let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
 document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         const name = this.getAttribute('data-name');
         const price = parseFloat(this.getAttribute('data-price'));
         const image = this.getAttribute('data-image');
