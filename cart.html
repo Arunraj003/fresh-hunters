@@ -118,9 +118,8 @@
     <h1>Your Cart Items</h1>
     <div id="cart-items-container" class="container-cart"></div>
     <h2 id="total-price"></h2>
-    <button id="order-button" class="order-btn">Order Now</button>
+    <button style="display: flex; align-items: center; justify-content: center; margin: 20px;" id="order-button" class="order-btn">Order Now</button>
   </section>
-
 
   <script>
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];

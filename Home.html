@@ -17,6 +17,10 @@
 
   <link rel="icon" href="img1/fresh-hunters.png" />
 
+  <!-- animation css linked  -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- firebase db config dont leak these script and id.the id present on this script is my personal account  -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
@@ -70,48 +74,51 @@
 
 
   <!-- header starts here -->
-  <div class="para">
-    <div class="page-title">Fresh Hunters</div>
+  <div class="para ">
+    <div class="page-title" data-aos="fade" data-aos-duration="400" data-aos-delay="100">Fresh Hunters
+    </div>
   </div>
 
   <!-- navbar  -->
-  <div class="menu">
-    <a href="#" class="logo">
-      Fresh Hunters <img src="img1/fresh-hunters.png" alt="logo" />
+  <div class="menu" data-aos="slide-left" data-aos-duration="300" data-aos-delay="200">
+    <a href="Home.html" class="logo" data-aos="fade-left" data-aos-duration="500" data-aos-delay="400">
+      Fresh Hunters <img data-aos="fade-up" data-aos-duration="600" data-aos-delay="500" src="img1/fresh-hunters.png"
+        alt="logo" />
     </a>
+
     <ul class="menu-ul">
       <a href="Home.html" class="a-menu">
-        <li>Home</li>
+        <li data-aos="fade-left" data-aos-duration="650" data-aos-delay="650">Home</li>
       </a>
       <a href="vegetables.html" class="a-menu">
-        <li>Vegetables</li>
+        <li data-aos="fade-left" data-aos-duration="600" data-aos-delay="600">Vegetables</li>
       </a>
       <a href="fruits.html" class="a-menu">
-        <li>Fruits</li>
+        <li data-aos="fade-left" data-aos-duration="600" data-aos-delay="550">Fruits</li>
       </a>
-      <a onClick="logout()" class="a-menu">
-        <li>LogOut</li>
+      <a onClick="logout()" class="a-menu ">
+        <li data-aos="fade-left" data-aos-duration="600" data-aos-delay="400">LogOut</li>
       </a>
     </ul>
   </div>
   <!-- sidebar -->
   <div class="sidebar" id="sidebar">
-    <i class="fa fa-bars"></i>
+    <i class="fa fa-bars" data-aos="fade-left" data-aos-duration="400" data-aos-delay="300"></i>
   </div>
   <div class="box" id="box">
     <i class="fa fa-xmark" id="close"></i>
     <ul class="menu-ul">
       <a href="Home.html" class="a-menu">
-        <li>Home</li>
+        <li data-aos="fade-left" data-aos-duration="700" data-aos-delay="550">Home</li>
       </a>
       <a href="vegetables.html" class="a-menu">
-        <li>Vegetables</li>
+        <li data-aos="fade-left" data-aos-duration="650" data-aos-delay="500">Vegetables</li>
       </a>
       <a href="fruits.html" class="a-menu">
-        <li>Fruits</li>
+        <li data-aos="fade-left" data-aos-duration="650" data-aos-delay="450">Fruits</li>
       </a>
       <a onClick="logout()" class="a-menu">
-        <li>LogOut</li>
+        <li data-aos="fade-left" data-aos-duration="600" data-aos-delay="400">LogOut</li>
       </a>
     </ul>
   </div>
@@ -119,12 +126,13 @@
 
 
   <div class="intro" id="home">
-    <h1>WHY FRUITS AND VEGETABLES ?</h1>
+    <h1 data-aos="fade-left" data-aos-duration="600" data-aos-delay="600"> WHY FRUITS AND VEGETABLES ?</h1>
     <p>
-      <span>
+      <span data-aos="flip-right" data-aos-duration="800" data-aos-delay="680">
         “The sweetest fruits grow at the top of a tree so that only those who
-        deserve them can reach them.”<br />
+        deserve them can reach them.”
       </span>
+      <br />
       In the ruins of a prehistoric village near Jericho, in the West Bank,
       scientists have discovered remains of figs that appear to be the
       earliest known cultivated fruit crop. These figs, grown approximately
@@ -145,8 +153,8 @@
       <br />
     </p>
 
-    <h1>Our Services</h1>
-    <div class="card" id="fruits">
+    <h1 data-aos="fade-right" data-aos-duration="600" data-aos-delay="700">Our Services</h1>
+    <div class="card" data-aos="fade-up-left" data-aos-duration="600" data-aos-delay="700" id="fruits">
       <img src="img1/vegetable.png" />
       <h4>Vegetables</h4>
       <p>
@@ -156,7 +164,8 @@
       </p>
       <a href="vegetables.html" class="btn">Enter Here</a>
     </div>
-    <div class="card" id="fruits">
+
+    <div class="card" id="fruits" data-aos="fade-up-right" data-aos-duration="600" data-aos-delay="900">
       <img src="img1/fruits.png" />
       <h4>Fruits</h4>
       <p>
@@ -174,10 +183,10 @@
   <!--------FOOTER STARTS HERE--------->
 
 
-  <div class="footer">
+  <div class="footer" data-aos="fade" data-aos-duration="700" data-aos-delay="950">
     <h1>Fresh Hunters</h1>
     <div class="quick-links">
-      <div>Our Projects</div>
+      <div data-aos="fade-up-left" data-aos-duration="700" data-aos-delay="950">Our Projects</div>
       <ul>
         <li><a href="#" class="a-links">Fresh Hunters</a></li>
         <li><a href="#" class="a-links">Food Delivery</a></li>
@@ -185,7 +194,7 @@
       </ul>
     </div>
     <div class="quick-links">
-      <div>Quick Links</div>
+      <div data-aos="fade-up-right" data-aos-duration="700" data-aos-delay="950">Quick Links</div>
       <ul>
         <li><a href="https://chat.whatsapp.com/JrRFFw4NYzFGMdvUPLYnhT" class="a-links">Contact Us</a></li>
         <li><a href="faq.html" class="a-links">FAQ</a></li>
@@ -193,16 +202,16 @@
       </ul>
     </div>
     <div class="quick-links">
-      <div>Contact Information</div>
+      <div data-aos="fade-up-left" data-aos-duration="700" data-aos-delay="950">Contact Information</div>
       <ul>
         <li>
-          <a href="">
+          <a href="to:arunr6506@gmail.com">
             Email:
             arunr6506@gmail.com
           </a>
         </li>
         <li>
-          <a href="contact.html">
+          <a href="faq.html">
             Phone: 9047877727,<br />
             7598161757,<br />
             8220198121,<br />
@@ -211,31 +220,39 @@
         </li>
         </a>
         <li>
-          <a href="">
+          <a href="/">
             Address : Tiruvannamalai,Tamil Nadu, India
         </li>
         </a>
       </ul>
     </div>
     <div class="quick-links">
-      <div>Follow Us</div>
+      <div data-aos="fade-up-right" data-aos-duration="700" data-aos-delay="1300">Follow Us</div>
       <ul>
         <li><a href="https://chat.whatsapp.com/JrRFFw4NYzFGMdvUPLYnhT" class="a-links"><i class="fab fa-whatsapp"></i>
             Whatsapp</a></li>
-        <li><a href="https://www.instagram.com" class="a-links"><i class="fab fa-instagram"></i> Instagram</a></li>
         <li><a href="https://www.linkedin.com/in/arunraj003/" class="a-links"><i class="fab fa-linkedin"></i>
             LinkedIn</a></li>
       </ul>
     </div>
   </div>
 
-  <div class="copyrights">
+  <div class="copyrights" data-aos="fade-down" data-aos-duration="400" data-aos-delay="1400">
     <h1>
       2023 Fresh Hunters
       <i class="fas fa-copyright"></i> TEAM 2
     </h1>
   </div>
   <!--------FOOTER END HERE--------->
+
+  <!-- ANIMATION CDN  -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      delay: true,
+    });
+  </script>
 
 
   <!-- SCRIPT FILES LINK ADDED HERE -->
