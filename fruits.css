@@ -522,6 +522,7 @@ a {
     flex-wrap: wrap;
     flex: 1;
   }
+
   .intro p span {
     width: 200px;
     height: 200px;
@@ -854,7 +855,7 @@ p {
 
 /* Contact  */
 
-.contact-container {
+.contact-container { 
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -905,14 +906,15 @@ p {
   .contact-container {
     padding: 15px;
   }
-  
+
   .contact-form input,
   .contact-form textarea {
     font-size: 14px;
   }
-  
+
   .contact-form button {
     font-size: 14px;
   }
 }
+
 /* contact end  */

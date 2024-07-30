@@ -50,7 +50,7 @@
         onAuthStateChanged(auth, (user) => {
             if (user == login) {
                 document.getElementById(
-                    alert(`Welcome, ${user.email}`)
+                    alert(`Welcome, Rs.{user.email}`)
                 )
             } else {
                 window.location.href = "login.html";
@@ -129,174 +129,92 @@
         <h1>Vegetables Page</h1>
     </div>
 
-
     <div class="row2">
-        <div class="card" id="Vegetables-babycorn" data-aos="fade" data-aos-duration="200" data-aos-delay="450">
-            <h4>BabyCorn</h4>
+        <div class="card" id="vegetables-babycorn" data-aos="fade" data-aos-duration="200" data-aos-delay="450">
+            <h4>Baby Corn</h4>
             <img src="img1/Vegetables/baby_corn.png" alt="Baby Corn">
-            <p>Tender, young ears of corn harvested early, often used in stir-fries and salads. They are sweet and
-                crunchy, adding texture to dishes.</p>
-            <p><strong>Price: $1.00</strong></p>
+            <p>Tender, young ears of corn harvested early, often used in stir-fries and salads. They are sweet and crunchy, adding texture to dishes.</p>
+            <p><strong>Price: Rs.1.00</strong></p>
             <input type="number" id="quantity-babycorn" value="1" min="1">
-            <button class="add-to-cart" data-name="BabyCorn" data-price="1.00"
-                data-image="img1/Vegetables/baby_corn.png">Add to
-                Cart</button>
+            <button class="add-to-cart" data-name="Baby Corn" data-price="1.00" data-image="img1/Vegetables/baby_corn.png">Add to Cart</button>
             <a href="Apple.html" class="btn">Click Here</a>
         </div>
-
-        <div class="card" id="Vegetables-beans" data-aos="fade" data-aos-duration="200" data-aos-delay="450">
-            <h4>Beans</h4>
-            <img src="img1/Vegetables/beans.png" alt="Banana">
-            <p>Versatile legumes available in various types such as green beans and kidney beans. They are rich in
-                protein, fiber, and essential nutrients.</p>
-            <p><strong>Price: $0.50</strong></p>
-            <input type="number" id="quantity-beans" value="1" min="1">
-            <button class="add-to-cart" data-name="Beans" data-price="0.50" data-image="img1/Vegetables/beans.png">Add
-                to
-                Cart</button>
-            <a href="Banana.html" class="btn">Click Here</a>
-        </div>
-
-        <div class="card" data-aos="fade" data-aos-duration="200" data-aos-delay="450" id="Vegetables-beetroot">
-            <h4>Beetroot</h4>
-            <img src="img1/Vegetables/beetroot.png" alt="Beetroot">
-            <p>A vibrant root vegetable known for its deep red color and earthy flavor. Often used in salads, juices,
-                and as a natural dye</p>
-            <p><strong>Price: $0.50</strong></p>
-            <input type="number" id="quantity-beetroot" value="1" min="1">
-            <button class="add-to-cart" data-name="Beetroot" data-price="0.50"
-                data-image="img1/Vegetables/beetroot.png">Add to
-                Cart</button>
-            <a href="Apricot.html" class="btn">Click Here</a>
-        </div>
-
-        <div class="card" data-aos="fade" data-aos-duration="200" data-aos-delay="450" id="Vegetables-beetroot">
-            <h4>Beetroot</h4>
-            <img src="img1/Vegetables/beetroot.png" alt="Beetroot">
-            <p>A vibrant root vegetable known for its deep red color and earthy flavor. Often used in salads, juices,
-                and as a natural dye.</p>
-            <p><strong>Price: $0.50</strong></p>
-            <input type="number" id="quantity-beetroot" value="1" min="1">
-            <button class="add-to-cart" data-name="Beetroot" data-price="0.50"
-                data-image="img1/Vegetables/beetroot.png">Add to Cart</button>
-            <a href="Apricot.html" class="btn">Click Here</a>
-        </div>
-
-        <div class="card" data-aos="fade" data-aos-duration="200" data-aos-delay="450" id="Vegetables-bittergourd">
-            <h4>Bitter Gourd</h4>
-            <img src="img1/Vegetables/bitterguard.png" alt="bitterguard">
-            <p>A green, bumpy-skinned vegetable known for its bitter taste. Used in traditional medicines and various
-                Asian cuisines for its health benefits.</p>
-            <p><strong>Price: $0.50</strong></p>
-            <input type="number" id="quantity-bittergourd" value="1" min="1">
-            <button class="add-to-cart" data-name="Bitter-guard" data-price="0.50"
-                data-image="img1/Vegetables/beetroot.png">Add to Cart</button>
-            <a href="Apricot.html" class="btn">Click Here</a>
-        </div>
-
-
-    </div>
-
-    <div class="row2">
-        <div class="card" id="Vegetables-babycorn" data-aos="fade" data-aos-duration="200" data-aos-delay="450">
-            <h4>BabyCorn</h4>
-            <img src="img1/Vegetables/baby_corn.png" alt="Baby Corn">
-            <p>Tender, young ears of corn harvested early, often used in stir-fries and salads. They are sweet and
-                crunchy, adding texture to dishes.</p>
-            <p><strong>Price: $1.00</strong></p>
-            <input type="number" id="quantity-babycorn" value="1" min="1">
-            <button class="add-to-cart" data-name="BabyCorn" data-price="1.00"
-                data-image="img1/Vegetables/baby_corn.png">Add to Cart</button>
-            <a href="Apple.html" class="btn">Click Here</a>
-        </div>
-
-        <div class="card" id="Vegetables-beans" data-aos="fade" data-aos-duration="200" data-aos-delay="450">
+    
+        <div class="card" id="vegetables-beans" data-aos="fade" data-aos-duration="200" data-aos-delay="450">
             <h4>Beans</h4>
             <img src="img1/Vegetables/beans.png" alt="Beans">
-            <p>Versatile legumes available in various types such as green beans and kidney beans. They are rich in
-                protein, fiber, and essential nutrients.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p>Versatile legumes available in various types such as green beans and kidney beans. They are rich in protein, fiber, and essential nutrients.</p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-beans" value="1" min="1">
-            <button class="add-to-cart" data-name="Beans" data-price="0.50" data-image="img1/Vegetables/beans.png">Add
-                to Cart</button>
+            <button class="add-to-cart" data-name="Beans" data-price="0.50" data-image="img1/Vegetables/beans.png">Add to Cart</button>
             <a href="Banana.html" class="btn">Click Here</a>
         </div>
-
-        <div class="card" data-aos="fade" data-aos-duration="200" data-aos-delay="450" id="Vegetables-beetroot">
+    
+        <div class="card" id="vegetables-beetroot" data-aos="fade" data-aos-duration="200" data-aos-delay="450">
             <h4>Beetroot</h4>
             <img src="img1/Vegetables/beetroot.png" alt="Beetroot">
-            <p>A vibrant root vegetable known for its deep red color and earthy flavor. Often used in salads, juices,
-                and as a natural dye</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p>A vibrant root vegetable known for its deep red color and earthy flavor. Often used in salads, juices, and as a natural dye.</p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-beetroot" value="1" min="1">
-            <button class="add-to-cart" data-name="Beetroot" data-price="0.50"
-                data-image="img1/Vegetables/beetroot.png">Add to Cart</button>
+            <button class="add-to-cart" data-name="Beetroot" data-price="0.50" data-image="img1/Vegetables/beetroot.png">Add to Cart</button>
             <a href="Apricot.html" class="btn">Click Here</a>
         </div>
-
-        <div class="card" data-aos="fade" data-aos-duration="200" data-aos-delay="450" id="Vegetables-bittergourd">
+    
+        <div class="card" id="vegetables-bittergourd" data-aos="fade" data-aos-duration="200" data-aos-delay="450">
             <h4>Bitter Gourd</h4>
             <img src="img1/Vegetables/bitterguard.png" alt="Bitter Gourd">
-            <p>A green, bumpy-skinned vegetable known for its bitter taste. Used in traditional medicines and various
-                Asian cuisines for its health benefits.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p>A green, bumpy-skinned vegetable known for its bitter taste. Used in traditional medicines and various Asian cuisines for its health benefits.</p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-bittergourd" value="1" min="1">
-            <button class="add-to-cart" data-name="Bitter-guard" data-price="0.50"
-                data-image="img1/Vegetables/bitterguard.png">Add to Cart</button>
+            <button class="add-to-cart" data-name="Bitter Gourd" data-price="0.50" data-image="img1/Vegetables/bitterguard.png">Add to Cart</button>
             <a href="Apricot.html" class="btn">Click Here</a>
         </div>
     </div>
+    
 
     <!------------ ROW 2 ------------>
     <div class="row2">
-        <div class="card" id="Vegetables-blackedeyebeans" data-aos="fade" data-aos-duration="200" data-aos-delay="450">
-            <h4>Blacked Eye Beans</h4>
-            <img src="img1/Vegetables/blacked_eye_beans.png" alt="Blacked Eye Beans">
-            <p>Small, creamy-white beans with a distinctive black spot. They are nutritious and often used in soups,
-                stews, and salads.</p>
-            <p><strong>Price: $0.50</strong></p>
+        <div class="card" id="vegetables-blackedeyebeans" data-aos="fade" data-aos-duration="200" data-aos-delay="450">
+            <h4>Black-eyed Beans</h4>
+            <img src="img1/Vegetables/blacked_eye_beans.png" alt="Black-eyed Beans">
+            <p>Small, creamy-white beans with a distinctive black spot. They are nutritious and often used in soups, stews, and salads.</p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-blackedeyebeans" value="1" min="1">
-            <button class="add-to-cart" data-name="BlackedEyeBeans" data-price="0.50"
-                data-image="img1/Vegetables/blacked_eye_beans.png">Add to Cart</button>
+            <button class="add-to-cart" data-name="Black-eyed Beans" data-price="0.50" data-image="img1/Vegetables/blacked_eye_beans.png">Add to Cart</button>
             <a href="Banana.html" class="btn">Click Here</a>
         </div>
-
-        <div class="card" id="Brinjal" data-aos="fade" data-aos-duration="200" data-aos-delay="450">
+    
+        <div class="card" id="vegetables-brinjal" data-aos="fade" data-aos-duration="200" data-aos-delay="450">
             <h4>Brinjal</h4>
             <img src="img1/Vegetables/brinjal.png" alt="Brinjal">
-            <p>A versatile vegetable with a spongy texture and mild flavor, used in dishes like ratatouille, curries,
-                and eggplant parmesan.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p>A versatile vegetable with a spongy texture and mild flavor, used in dishes like ratatouille, curries, and eggplant parmesan.</p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-brinjal" value="1" min="1">
-            <button class="add-to-cart" data-name="Brinjal" data-price="0.50"
-                data-image="img1/Vegetables/brinjal.png">Add to Cart</button>
+            <button class="add-to-cart" data-name="Brinjal" data-price="0.50" data-image="img1/Vegetables/brinjal.png">Add to Cart</button>
             <a href="Banana.html" class="btn">Click Here</a>
         </div>
-
-        <div class="card" data-aos="fade" data-aos-duration="200" data-aos-delay="450" id="broad-beans">
+    
+        <div class="card" data-aos="fade" data-aos-duration="200" data-aos-delay="450" id="vegetables-broadbeans">
             <h4>Broad Beans</h4>
             <img src="img1/Vegetables/Broad-beans.png" alt="Broad Beans">
-            <p>The broad beans are broad, leather-like pods. They are green and usually mature to a blackish-brown with
-                a densely downy skin.</p>
-            <p><strong>Price: $0.50</strong></p>
-            <input type="number" id="quantity-broad-beans" value="1" min="1">
-            <button class="add-to-cart" data-name="Broad-beans" data-price="0.50"
-                data-image="img1/Vegetables/Broad-beans.png">Add to Cart</button>
+            <p>Broad beans are broad, leather-like pods. They are green and usually mature to a blackish-brown with a densely downy skin.</p>
+            <p><strong>Price: Rs.0.50</strong></p>
+            <input type="number" id="quantity-broadbeans" value="1" min="1">
+            <button class="add-to-cart" data-name="Broad Beans" data-price="0.50" data-image="img1/Vegetables/Broad-beans.png">Add to Cart</button>
             <a href="Banana.html" class="btn">Click Here</a>
         </div>
-
-        <div class="card" data-aos="fade" data-aos-duration="200" data-aos-delay="450" id="Vegetables-broccoli">
+    
+        <div class="card" data-aos="fade" data-aos-duration="200" data-aos-delay="450" id="vegetables-broccoli">
             <h4>Broccoli</h4>
             <img src="img1/Vegetables/broccoli.png" alt="Broccoli">
-            <p>A green vegetable resembling a mini tree, rich in vitamins and fiber. Commonly steamed, roasted, or
-                added to stir-fries.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p>A green vegetable resembling a mini tree, rich in vitamins and fiber. Commonly steamed, roasted, or added to stir-fries.</p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-broccoli" value="1" min="1">
-            <button class="add-to-cart" data-name="Broccoli" data-price="0.50"
-                data-image="img1/Vegetables/broccoli.png">Add to Cart</button>
+            <button class="add-to-cart" data-name="Broccoli" data-price="0.50" data-image="img1/Vegetables/broccoli.png">Add to Cart</button>
             <a href="Banana.html" class="btn">Click Here</a>
         </div>
     </div>
+    
 
     <!------------ ROW 3 ------------>
     <div class="row3">
@@ -305,7 +223,7 @@
             <img src="img1/Vegetables/cabbage.png" alt="Cabbage">
             <p>A leafy green or purple vegetable with a dense, crunchy texture. Used in salads, coleslaw, and various
                 cooked dishes.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-cabbage" value="1" min="1">
             <button class="add-to-cart" data-name="Cabbage" data-price="0.50"
                 data-image="img1/Vegetables/cabbage.png">Add to Cart</button>
@@ -317,7 +235,7 @@
             <img src="img1/Vegetables/capsicum1.png" alt="Capsicum">
             <p>Crisp and sweet peppers available in various colors like red, yellow, and green. They add color and
                 flavor to many dishes.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-capsicum" value="1" min="1">
             <button class="add-to-cart" data-name="Capsicum" data-price="0.50"
                 data-image="img1/Vegetables/capsicum1.png">Add to Cart</button>
@@ -329,7 +247,7 @@
             <img src="img1/Vegetables/carrot1.png" alt="Carrot">
             <p>A crunchy root vegetable, typically orange, rich in beta-carotene. Eaten raw in salads or cooked in
                 various dishes.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-carrot" value="1" min="1">
             <button class="add-to-cart" data-name="Carrot" data-price="0.50"
                 data-image="img1/Vegetables/carrot1.png">Add to Cart</button>
@@ -341,7 +259,7 @@
             <img src="img1/Vegetables/cauliflower.png" alt="Cauliflower">
             <p>A white, flowering vegetable related to broccoli. Known for its mild flavor and versatility in dishes
                 like cauliflower rice and mashed cauliflower.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-cauliflower" value="1" min="1">
             <button class="add-to-cart" data-name="Cauliflower" data-price="0.50"
                 data-image="img1/Vegetables/cauliflower.png">Add to Cart</button>
@@ -355,7 +273,7 @@
             <h4>Red Chillies</h4>
             <img src="img1/Vegetables/chiilies_red.png" alt="Red Chillies">
             <p>Spicy peppers that add heat to dishes. They are used fresh, dried, or ground into chili powder.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-redchillies" value="1" min="1">
             <button class="add-to-cart" data-name="Red Chillies" data-price="0.50"
                 data-image="img1/Vegetables/chiilies_red.png">Add to Cart</button>
@@ -367,7 +285,7 @@
             <img src="img1/Vegetables/cucumber.png" alt="Cucumber">
             <p>A refreshing, hydrating vegetable with a mild flavor. Often used in salads, sandwiches, and as a garnish.
             </p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-cucumber" value="1" min="1">
             <button class="add-to-cart" data-name="Cucumber" data-price="0.50"
                 data-image="img1/Vegetables/cucumber.png">Add to Cart</button>
@@ -379,7 +297,7 @@
             <img src="img1/Vegetables/fennel.png" alt="Fennel">
             <p>A bulbous vegetable with a sweet, anise-like flavor. Used in salads, roasted, or as a seasoning in
                 various dishes.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-fennel" value="1" min="1">
             <button class="add-to-cart" data-name="Fennel" data-price="0.50" data-image="img1/Vegetables/fennel.png">Add
                 to Cart</button>
@@ -391,7 +309,7 @@
             <img src="img1/Vegetables/garlic.png" alt="Garlic">
             <p>A pungent bulb used to add depth and flavor to many dishes. Known for its health benefits and strong
                 aroma.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-garlic" value="1" min="1">
             <button class="add-to-cart" data-name="Garlic" data-price="0.50" data-image="img1/Vegetables/garlic.png">Add
                 to Cart</button>
@@ -406,7 +324,7 @@
             <img src="img1/Vegetables/ginger.png" alt="Ginger">
             <p>A spicy root with a warm, aromatic flavor. Used in cooking, baking, and as a remedy for digestive issues.
             </p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-ginger" value="1" min="1">
             <button class="add-to-cart" data-name="Ginger" data-price="0.50" data-image="img1/Vegetables/ginger.png">Add
                 to Cart</button>
@@ -417,7 +335,7 @@
             <h4>Green Chillies</h4>
             <img src="img1/Vegetables/greenchilli.png" alt="Green Chillies">
             <p>Spicy peppers that are less mature than red chillies. They add heat and flavor to many savory dishes.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-greenchillies" value="1" min="1">
             <button class="add-to-cart" data-name="Green Chillies" data-price="0.50"
                 data-image="img1/Vegetables/greenchilli.png">Add to Cart</button>
@@ -429,7 +347,7 @@
             <img src="img1/Vegetables/ladiesfinger.png" alt="Ladies Finger">
             <p>A green, pod-shaped vegetable known for its slimy texture when cooked. Commonly used in soups and stews.
             </p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-ladiesfinger" value="1" min="1">
             <button class="add-to-cart" data-name="Ladies Finger" data-price="0.50"
                 data-image="img1/Vegetables/ladiesfinger.png">Add to Cart</button>
@@ -441,7 +359,7 @@
             <img src="img1/Vegetables/leeks.png" alt="Leeks">
             <p>A mild, onion-like vegetable with a sweet flavor. Often used in soups, stews, and as a base for many
                 dishes.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-leeks" value="1" min="1">
             <button class="add-to-cart" data-name="Leeks" data-price="0.50" data-image="img1/Vegetables/leeks.png">Add
                 to Cart</button>
@@ -455,7 +373,7 @@
             <img src="img1/Vegetables/mushroom.png" alt="Mushroom">
             <p>Fungi with a meaty texture and umami flavor. Used in a variety of dishes, from soups to stir-fries and as
                 a meat substitute.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-mushroom" value="1" min="1">
             <button class="add-to-cart" data-name="Mushroom" data-price="0.50"
                 data-image="img1/Vegetables/mushroom.png">Add to Cart</button>
@@ -467,7 +385,7 @@
             <img src="img1/Vegetables/peas.png" alt="Peas">
             <p>Small, round green seeds with a sweet flavor. Eaten fresh, frozen, or canned, and used in many recipes.
             </p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-peas" value="1" min="1">
             <button class="add-to-cart" data-name="Peas" data-price="0.50" data-image="img1/Vegetables/peas.png">Add to
                 Cart</button>
@@ -478,7 +396,7 @@
             <h4>Potato</h4>
             <img src="img1/Vegetables/potato2.png" alt="Potato">
             <p>A starchy tuber that is a staple food in many cuisines. Can be boiled, baked, fried, or mashed.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-potato" value="1" min="1">
             <button class="add-to-cart" data-name="Potato" data-price="0.50"
                 data-image="img1/Vegetables/potato2.png">Add to Cart</button>
@@ -490,7 +408,7 @@
             <img src="img1/Vegetables/radhishes.png" alt="Radishes">
             <p>Crisp, peppery root vegetables available in various colors. Often eaten raw in salads or as a crunchy
                 snack.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-radishes" value="1" min="1">
             <button class="add-to-cart" data-name="Radishes" data-price="0.50"
                 data-image="img1/Vegetables/radhishes.png">Add to Cart</button>
@@ -505,7 +423,7 @@
             <img src="img1/Vegetables/red_dry.png" alt="Dry Red Chillies">
             <p>Dried, spicy peppers used to add heat to dishes. Commonly ground into chili powder or used whole in
                 cooking.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-drychillies" value="1" min="1">
             <button class="add-to-cart" data-name="Dry Red Chillies" data-price="0.50"
                 data-image="img1/Vegetables/red_dry.png">Add to Cart</button>
@@ -516,7 +434,7 @@
             <h4>Spinach</h4>
             <img src="img1/Vegetables/spinach.png" alt="Spinach">
             <p>A leafy green vegetable high in iron and vitamins. Eaten raw in salads or cooked in various dishes.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-spinach" value="1" min="1">
             <button class="add-to-cart" data-name="Spinach" data-price="0.50"
                 data-image="img1/Vegetables/spinach.png">Add to Cart</button>
@@ -528,7 +446,7 @@
             <img src="img1/Vegetables/squash.png" alt="Squash">
             <p>A versatile vegetable with a sweet, mild flavor. Varieties include zucchini and butternut, used in savory
                 and sweet dishes.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-squash" value="1" min="1">
             <button class="add-to-cart" data-name="Squash" data-price="0.50" data-image="img1/Vegetables/squash.png">Add
                 to Cart</button>
@@ -540,7 +458,7 @@
             <img src="img1/Vegetables/sweet-potatoes.png" alt="Sweet Potatoes">
             <p>A nutritious root vegetable with a sweet flavor. Eaten baked, mashed, or roasted, and used in both savory
                 and sweet recipes.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-sweetpotatoes" value="1" min="1">
             <button class="add-to-cart" data-name="Sweet Potatoes" data-price="0.50"
                 data-image="img1/Vegetables/sweet-potatoes.png">Add to Cart</button>
@@ -555,7 +473,7 @@
             <img src="img1/Vegetables/sweetcorn.png" alt="Sweet Corn">
             <p>Tender, sweet kernels of corn eaten fresh, canned, or frozen. Often used in salads, soups, and as a side
                 dish.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-sweetcorn" value="1" min="1">
             <button class="add-to-cart" data-name="Sweet Corn" data-price="0.50"
                 data-image="img1/Vegetables/sweetcorn.png">Add to Cart</button>
@@ -568,7 +486,7 @@
             <img src="img1/Vegetables/Tomato1.png" alt="Tomato">
             <p>A juicy, red fruit often used as a vegetable in cooking. Key ingredient in sauces, salads, and many
                 dishes.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-tomato" value="1" min="1">
             <button class="add-to-cart" data-name="Tomato" data-price="0.50"
                 data-image="img1/Vegetables/Tomato1.png">Add to Cart</button>
@@ -580,7 +498,7 @@
             <img src="img1/Vegetables/yam.png" alt="Yam">
             <p>A starchy tuber with a sweet flavor, often confused with sweet potatoes. Used in various culinary
                 traditions worldwide.</p>
-            <p><strong>Price: $0.50</strong></p>
+            <p><strong>Price: Rs.0.50</strong></p>
             <input type="number" id="quantity-yam" value="1" min="1">
             <button class="add-to-cart" data-name="Yam" data-price="0.50" data-image="img1/Vegetables/yam.png">Add to
                 Cart</button>
