@@ -159,9 +159,11 @@
     cartItemsContainer.addEventListener('click', function (event) {
       if (event.target.classList.contains('delete-item')) {
         const index = event.target.getAttribute('data-index');
-        cartItems.splice(index, 1); // Remove item from cart
+        cartItems.splice(index, 1); 
+        // Remove item from cart
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        updateCartDisplay(); // Refresh cart display
+        updateCartDisplay(); 
+        // Refresh cart display
       }
     });
 
@@ -181,14 +183,19 @@
       if (cartItems.length === 0) {
         alert("Your cart is empty.");
       } else {
-        alert("Order placed successfully!"); // This can be replaced with actual order processing logic
-        localStorage.removeItem('cartItems'); // Clear cart
-        updateCartDisplay(); // Refresh cart display
-        window.location.href = 'order-payment.html'; // Redirect to payment page
+        alert("Order placed successfully!"); 
+        // This can be replaced with actual order processing logic
+        localStorage.removeItem('cartItems'); 
+        // Clear cart
+        updateCartDisplay(); 
+        // Refresh cart display
+        window.location.href = 'order-payment.html'; 
+        // Redirect to payment page
       }
     });
 
-    updateCartDisplay(); // Initial display
+    updateCartDisplay(); 
+    // Initial display
   </script>
 
 
