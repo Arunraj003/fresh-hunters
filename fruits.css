@@ -508,7 +508,7 @@ a {
   }
 
   .card img {
-    max-width: 50px;
+    width: 80px;
   }
 
   .row2,
