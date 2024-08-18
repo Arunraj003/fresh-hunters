@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <title>LOGIN -- FRESH HUNTERS</title>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+      import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBN9L7Gr7-oXB_JyTP7rEVYVEiQRY5bXls",
+        authDomain: "fresh-hunters.firebaseapp.com",
+        projectId: "fresh-hunters",
+        storageBucket: "fresh-hunters.appspot.com",
+        messagingSenderId: "411275754727",
+        appId: "1:411275754727:web:474fbaebec6babdba7b642",
+        measurementId: "G-LJZT6LKKE9",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const auth = getAuth(app);
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document
+          .getElementById("login-form")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            signInWithEmailAndPassword(auth, email, password)
+              .then((userCredential) => {
+                window.location.href = "Home.html";
+              })
+              .catch((error) => {
+                alert(error.message);
+              });
+          });
+      });
+    </script>
+  </head>
+  
+  <body>
+    <div class="showcase">
+      <div class="video-container">
+        <video src="2.mp4" autoplay muted loop id="myVideo"></video>
+      </div>
+    </div>
+    <div class="login-box">
+      <h2>Login Page</h2>
+      <form id="login-form">
+        <div class="user-box">
+          <input type="email" id="email" required />
+          <label>Email</label>
+        </div>
+        <div class="user-box">
+          <input type="password" id="password" required />
+          <label>Password</label>
+        </div>
+        <div class="user-box">
+          <button type="submit">Submit</button>
+          <a href="index.html">Don't Have An Account?</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

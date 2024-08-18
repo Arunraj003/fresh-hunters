@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Hunters Your Cart</title>
+  <link rel="stylesheet" href="fruits.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="icon" href="img1/fresh-hunters.png" />
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+    import {
+      getAuth,
+      onAuthStateChanged,
+      signOut,
+    } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBN9L7Gr7-oXB_JyTP7rEVYVEiQRY5bXls",
+      authDomain: "fresh-hunters.firebaseapp.com",
+      projectId: "fresh-hunters",
+      storageBucket: "fresh-hunters.appspot.com",
+      messagingSenderId: "411275754727",
+      appId: "1:411275754727:web:474fbaebec6babdba7b642",
+      measurementId: "G-LJZT6LKKE9",
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth(app); // Initialize Firebase Auth
+
+    // Check if user is signed in
+    onAuthStateChanged(auth, (user) => {
+      if (user == login) {
+        document.getElementById(
+          alert(`Welcome, ${user.email}`)
+        )
+      } else {
+        window.location.href = "login.html";
+      }
+    });
+
+    // Logout function
+    window.logout = function () {
+      signOut(auth)
+        .then(() => {
+          window.location.href = "login.html";
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    };
+  </script>
+</head>
+
+<body>
+  <!-- header starts here -->
+  <div class="para">
+    <div class="page-title">Fresh Hunters</div>
+  </div>
+
+  <!-- navbar  -->
+  <div class="menu">
+    <a href="#" class="logo">
+      Fresh Hunters <img src="img1/fresh-hunters.png" alt="logo" />
+    </a>
+    <ul class="menu-ul">
+      <a href="Home.html" class="a-menu">
+        <li>Home</li>
+      </a>
+      <a href="vegetables.html" class="a-menu">
+        <li>Vegetables</li>
+      </a>
+      <a href="fruits.html" class="a-menu">
+        <li>Fruits</li>
+      </a>
+      <a onClick="logout()" class="a-menu">
+        <li>LogOut</li>
+      </a>
+    </ul>
+  </div>
+  <!-- sidebar -->
+  <div class="sidebar" id="sidebar">
+    <i class="fa fa-bars"></i>
+  </div>
+  <div class="box" id="box">
+    <i class="fa fa-xmark" id="close"></i>
+    <ul class="menu-ul">
+      <a href="Home.html" class="a-menu">
+        <li>Home</li>
+      </a>
+      <a href="vegetables.html" class="a-menu">
+        <li>Vegetables</li>
+      </a>
+      <a href="fruits.html" class="a-menu">
+        <li>Fruits</li>
+      </a>
+      <a onClick="logout()" class="a-menu">
+        <li>LogOut</li>
+      </a>
+    </ul>
+  </div>
+  <!-- header ends here  -->
+
+  <section>
+    <h1>Your Cart Items</h1>
+    <div id="cart-items-container" class="container-cart"></div>
+    <h2 id="total-price"></h2>
+    <button style="display: flex; align-items: center; justify-content: center; margin: 20px;" id="order-button" class="order-btn">Order Now</button>
+  </section>
+
+  <script>
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const cartItemsContainer = document.getElementById('cart-items-container');
+    const totalPriceElement = document.getElementById('total-price');
+
+    function updateCartDisplay() {
+      cartItemsContainer.innerHTML = '';
+      let totalPrice = 0;
+
+      if (cartItems.length === 0) {
+        cartItemsContainer.innerHTML = '<p>No items in your cart.</p>';
+        totalPriceElement.textContent = '';
+        return;
+      }
+
+      cartItems.forEach((item, index) => {
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('cart-item');
+        const itemTotalPrice = (item.price * item.quantity).toFixed(2);
+        totalPrice += item.price * item.quantity;
+
+        itemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" style="width:50px;">
+                    <p>${item.name} - $${item.price.toFixed(2)} each</p>
+                    <input type="number" class="quantity-input" data-index="${index}" value="${item.quantity}" min="1">
+                    <p>Price: $${itemTotalPrice}</p>
+                    <button class="btn delete-item" data-index="${index}">Delete</button>
+                `;
+        cartItemsContainer.appendChild(itemElement);
+      });
+
+      totalPriceElement.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+    }
+
+    // Handle delete item
+    cartItemsContainer.addEventListener('click', function (event) {
+      if (event.target.classList.contains('delete-item')) {
+        const index = event.target.getAttribute('data-index');
+        cartItems.splice(index, 1); 
+        // Remove item from cart
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        updateCartDisplay(); 
+        // Refresh cart display
+      }
+    });
+
+    // Handle quantity change
+    cartItemsContainer.addEventListener('input', function (event) {
+      if (event.target.classList.contains('quantity-input')) {
+        const index = event.target.getAttribute('data-index');
+        const newQuantity = parseInt(event.target.value);
+        cartItems[index].quantity = newQuantity;
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        updateCartDisplay(); // Refresh cart display
+      }
+    });
+
+    // Handle order button
+    document.getElementById('order-button').addEventListener('click', function () {
+      if (cartItems.length === 0) {
+        alert("Your cart is empty.");
+      } else {
+        alert("Order placed successfully!"); 
+        // This can be replaced with actual order processing logic
+        localStorage.removeItem('cartItems'); 
+        // Clear cart
+        updateCartDisplay(); 
+        // Refresh cart display
+        window.location.href = 'order-payment.html'; 
+        // Redirect to payment page
+      }
+    });
+
+    updateCartDisplay(); 
+    // Initial display
+  </script>
+
+
+<script src="js/navbar.js"></script>
+</body>
+
+</html>

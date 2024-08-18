@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Hunters FRUITS</title>
+    <link rel="stylesheet" href="fruits.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="icon" href="img1/fresh-hunters.png" />
+
+    <!-- animation css linked  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- firebase db config dont leak these script and id.the id present on this script is my personal account  -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+        import {
+            getAuth,
+            onAuthStateChanged,
+            signOut,
+        } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBN9L7Gr7-oXB_JyTP7rEVYVEiQRY5bXls",
+            authDomain: "fresh-hunters.firebaseapp.com",
+            projectId: "fresh-hunters",
+            storageBucket: "fresh-hunters.appspot.com",
+            messagingSenderId: "411275754727",
+            appId: "1:411275754727:web:474fbaebec6babdba7b642",
+            measurementId: "G-LJZT6LKKE9",
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app); // Initialize Firebase Auth
+
+        // Check if user is signed in
+        onAuthStateChanged(auth, (user) => {
+            if (user == login) {
+                document.getElementById(
+                    alert(`Welcome, Rs.{user.email}`)
+                )
+            } else {
+                window.location.href = "login.html";
+            }
+        });
+
+        // Logout function
+        window.logout = function () {
+            signOut(auth)
+                .then(() => {
+                    window.location.href = "login.html";
+                })
+                .catch((error) => {
+                    alert(error.message);
+                });
+        };
+    </script>
+
+</head>
+
+<body>
+    <!-- header starts here -->
+    <div class="para ">
+        <div class="page-title" data-aos="fade" data-aos-duration="400" data-aos-delay="100">Fresh Hunters
+        </div>
+    </div>
+
+    <!-- navbar  -->
+    <div class="menu" data-aos="fade-in" data-aos-duration="300" data-aos-delay="200">
+        <a href="Home.html" class="logo" data-aos="fade-left" data-aos-duration="500" data-aos-delay="400">
+            Fresh Hunters <img data-aos="fade-up" data-aos-duration="600" data-aos-delay="500"
+                src="img1/fresh-hunters.png" alt="logo" />
+        </a>
+
+        <ul class="menu-ul">
+            <a href="Home.html" class="a-menu">
+                <li data-aos="fade-left" data-aos-duration="650" data-aos-delay="650">Home</li>
+            </a>
+            <a href="vegetables.html" class="a-menu">
+                <li data-aos="fade-left" data-aos-duration="600" data-aos-delay="600">Vegetables</li>
+            </a>
+
+            <a href="cart.html" class="a-menu">
+                <li data-aos="fade-left" data-aos-duration="600" data-aos-delay="550">Your Items</li>
+            </a>
+            <a onClick="logout()" class="a-menu ">
+                <li data-aos="fade-left" data-aos-duration="600" data-aos-delay="400">LogOut</li>
+            </a>
+        </ul>
+    </div>
+    <!-- sidebar -->
+    <div class="sidebar" id="sidebar">
+        <i class="fa fa-bars" data-aos="fade-left" data-aos-duration="400" data-aos-delay="300"></i>
+    </div>
+
+    <div class="box" id="box">
+        <i class="fa fa-xmark" id="close"></i>
+        <ul class="menu-ul">
+            <a href="Home.html" class="a-menu">
+                <li data-aos="fade-left" data-aos-duration="700" data-aos-delay="550">Home</li>
+            </a>
+            <a href="vegetables.html" class="a-menu">
+                <li data-aos="fade-left" data-aos-duration="650" data-aos-delay="500">Vegetables</li>
+            </a>
+            <a href="cart.html" class="a-menu">
+                <li data-aos="fade-left" data-aos-duration="650" data-aos-delay="450">Your Items</li>
+            </a>
+            <a onClick="logout()" class="a-menu">
+                <li data-aos="fade-left" data-aos-duration="600" data-aos-delay="400">LogOut</li>
+            </a>
+        </ul>
+    </div>
+    <!-- header ends here  -->
+
+
+    <div class="heading" data-aos="fade-right" data-aos-duration="400" data-aos-delay="400">
+        <h1>Fruits Page</h1>
+    </div>
+
+    <div class="row2">
+        <div class="card" id="fruits-apple" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450">
+            <h4>Apple</h4>
+            <img src="img1/apple.png" alt="Apple">
+            <p>Apples are crunchy and bright-colored, offering a sweet to tart flavor.</p>
+            <p><strong>Price: Rs.220</strong></p>
+            <input type="number" id="quantity-apple" value="1" min="1">
+            <button class="add-to-cart" data-name="Apple" data-price="220" data-image="img1/apple.png">Add to
+                Cart</button>
+        </div>
+
+        <div class="card" id="fruits-banana" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450">
+            <h4>Banana</h4>
+            <img src="img1/banana.png" alt="Banana">
+            <p>Bananas are tropical fruits with soft, sweet flesh covered by a thick skin.</p>
+            <p><strong>Price: Rs.60</strong></p>
+            <input type="number" id="quantity-banana" value="1" min="1">
+            <button class="add-to-cart" data-name="Banana" data-price="60" data-image="img1/banana.png">Add to
+                Cart</button>
+        </div>
+
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="fruits-apricot">
+            <h4>Apricot</h4>
+            <img src="img1/apricot.png" alt="Apricot">
+            <p>Apricots are small, golden-orange fruits with velvety skin sweet-tart flesh.</p>
+            <p><strong>Price: Rs.450</strong></p>
+            <input type="number" id="quantity-apricot" value="1" min="1">
+            <button class="add-to-cart" data-name="Apricot" data-price="450" data-image="img1/apricot.png">Add to
+                Cart</button>
+        </div>
+
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="fruits-avocado">
+            <h4>Avocado</h4>
+            <img src="img1/avocado.png" alt="Avocado">
+            <p>Avocados have creamy, nutrient-dense flesh with a mild, buttery flavor.</p>
+            <p><strong>Price: Rs.180</strong></p>
+            <input type="number" id="quantity-avocado" value="1" min="1">
+            <button class="add-to-cart" data-name="Avocado" data-price="180" data-image="img1/avocado.png">Add to
+                Cart</button>
+        </div>
+    </div>
+
+
+    <!------------ ROW 2 ------------>
+    <div class="row2">
+        <div class="card" id="fruits-blueberry" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450">
+            <h4>Blueberry</h4>
+            <img src="img1/blue berry.png" alt="Blueberry" width="100">
+            <p>Blueberries are small, round berries with a sweet-tart flavor and vibrant blue color. They are packed
+                with antioxidants and vitamins. Perfect for snacking, baking, and adding to cereals.</p>
+            <p><strong>Price: Rs.1,000</strong></p>
+            <input type="number" id="quantity-blueberry" value="1" min="1">
+            <button class="add-to-cart" data-name="Blueberry" data-price="1000" data-image="img1/blue berry.png">Add to
+                Cart</button>
+        </div>
+
+        <div class="card" id="fruits-cherry" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450">
+            <h4>Cherry</h4>
+            <img src="img1/cherry.png" alt="Cherry" width="100">
+            <p>Cherries are small, juicy fruits with a sweet or tart flavor, depending on the variety. Rich in
+                antioxidants and anti-inflammatory compounds, they are delicious fresh, in desserts, and preserves.</p>
+            <p><strong>Price: Rs.600</strong></p>
+            <input type="number" id="quantity-cherry" value="1" min="1">
+            <button class="add-to-cart" data-name="Cherry" data-price="600" data-image="img1/cherry.png">Add to
+                Cart</button>
+        </div>
+
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="cranberry">
+            <h4>Cranberry</h4>
+            <img src="img1/cran berry.png" alt="Cranberry" width="100">
+            <p>Cranberries are small, red berries known for their tart flavor and health benefits, including urinary
+                tract health. Often consumed as juice, sauce, or dried snacks.</p>
+            <p><strong>Price: Rs.1,200</strong></p>
+            <input type="number" id="quantity-cranberry" value="1" min="1">
+            <button class="add-to-cart" data-name="Cranberry" data-price="1200" data-image="img1/cran berry.png">Add to
+                Cart</button>
+        </div>
+
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="custard-apple">
+            <h4>Custard Apple</h4>
+            <img src="img1/custard apple.png" alt="Custard Apple" width="100">
+            <p>Custard apples have a sweet, creamy flesh with a custard-like texture. Rich in vitamins, minerals, and
+                antioxidants, they are enjoyed fresh or in desserts.</p>
+            <p><strong>Price: Rs.140</strong></p>
+            <input type="number" id="quantity-custard-apple" value="1" min="1">
+            <button class="add-to-cart" data-name="Custard Apple" data-price="140"
+                data-image="img1/custard apple.png">Add to Cart</button>
+        </div>
+    </div>
+
+    <!------------ ROW 3 ------------>
+    <div class="row3">
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="dragon-fruit">
+            <h4>Dragon Fruit</h4>
+            <img src="img1/dragon 1.png" alt="Dragon-fruit">
+            <p>Dragon fruit has vibrant skin and mildly sweet, kiwi-like flesh speckled with tiny seeds. High in fiber,
+                antioxidants, and vitamins, it's great for fresh eating and smoothies.</p>
+            <p><strong>Price: Rs.220</strong></p>
+            <input type="number" id="quantity-dragon-fruit" value="1" min="1">
+            <button class="add-to-cart" data-name="Dragon Fruit" 
+            data-price="220" data-image="img1/dragon 1.png">Add to
+                Cart</button>
+        </div>
+
+        <div class="card" id="fig-fruit" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450">
+            <h4>Fig Fruit</h4>
+            <img src="img1/fig.png" alt="Fig-fruit">
+            <p>Figs have a sweet, honey-like flavor and a soft, chewy texture with crunchy seeds. They are high in
+                fiber, vitamins, and minerals, enjoyed fresh, dried, or in baked goods.</p>
+            <p><strong>Price: Rs.180</strong></p>
+            <input type="number" id="quantity-fig-fruit" value="1" min="1">
+            <button class="add-to-cart" data-name="Fig Fruit" data-price="180" data-image="img1/fig.png">Add to
+                Cart</button>
+        </div>
+
+        <div class="card" id="grape-fruit" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450">
+            <h4>Grape Fruit</h4>
+            <img src="img1/grape fruit.png" alt="Grape-fruit">
+            <p>Grapefruits are large, tangy citrus fruits with juicy, slightly bitter flesh. They are rich in vitamins C
+                and A and antioxidants, often eaten fresh or juiced.</p>
+            <p><strong>Price: Rs.70</strong></p>
+            <input type="number" id="quantity-grape-fruit" value="1" min="1">
+            <button class="add-to-cart" data-name="Grape Fruit" data-price="70" data-image="img1/grape fruit.png">Add
+                to Cart</button>
+        </div>
+
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="green-grapes">
+            <h4>Green Grapes</h4>
+            <img src="img1/green grapes.png" alt="Green-grapes">
+            <p>Green grapes are small, sweet, and juicy with a slightly tart flavor. They are high in vitamins C and K
+                and antioxidants, perfect for snacking, salads, and wines.</p>
+            <p><strong>Price: Rs.80</strong></p>
+            <input type="number" id="quantity-green-grapes" value="1" min="1">
+            <button class="add-to-cart" data-name="Green Grapes" data-price="80"
+                data-image="img1/green grapes.png">Add to Cart</button>
+
+        </div>
+    </div>
+
+
+    <!------------ ROW 4 ------------>
+    <div class="row4">
+        <div class="card" id="guava" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450">
+            <h4>Guava</h4>
+            <img src="img1/guava 1.png" alt="Guava">
+            <p>Guavas have a sweet, tropical flavor with a creamy texture and edible seeds. Packed with vitamins C and
+                A, they are enjoyed fresh, juiced, or in desserts.</p>
+            <p><strong>Price: Rs.90</strong></p>
+            <input type="number" id="quantity-guava" value="1" min="1">
+            <button class="add-to-cart" data-name="Guava" data-price="90" data-image="img1/guava 1.png">Add to
+                Cart</button>
+
+        </div>
+
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="jack-fruit">
+            <h4>Jack Fruit</h4>
+            <img src="img1/jack fruit.png" alt="Jack-fruit">
+            <p>Jackfruits are large, tropical fruits with sweet, fibrous flesh that can be eaten fresh or cooked. High
+                in vitamins, minerals, and antioxidants, they are also a popular meat substitute in vegan dishes.</p>
+            <p><strong>Price: Rs.170</strong></p>
+            <input type="number" id="quantity-jack-fruit" value="1" min="1">
+            <button class="add-to-cart" data-name="Jack Fruit" data-price="170" data-image="img1/jack fruit.png">Add to
+                Cart</button>
+
+        </div>
+
+        <div class="card" id="kiwi" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450">
+            <h4>Kiwi</h4>
+            <img src="img1/kiwi.png" alt="kiwi">
+            <p>Kiwis have a tangy, sweet flavor with bright green or golden flesh and tiny black seeds. They are rich in
+                vitamin C, fiber, and antioxidants, perfect for fresh eating or adding to salads.</p>
+            <p><strong>Price: Rs.320</strong></p>
+            <input type="number" id="quantity-kiwi" value="1" min="1">
+            <button class="add-to-cart" data-name="Kiwi" data-price="320" data-image="img1/kiwi.png">Add to
+                Cart</button>
+
+        </div>
+
+        <div class="card" id="lemon" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450">
+            <h4>Lemon</h4>
+            <img src="img1/lemon.png" alt="lemon">
+            <p>Lemons are tangy, aromatic citrus fruits with bright yellow skin and juicy, acidic flesh. High in vitamin
+                C, they are widely used in cooking, baking, and as a natural remedy.</p>
+            <p><strong>Price: Rs.175</strong></p>
+            <input type="number" id="quantity-lemon" value="1" min="1">
+            <button class="add-to-cart" data-name="Lemon" data-price="175" data-image="img1/lemon.png">Add to
+                Cart</button>
+
+        </div>
+    </div>
+
+    <!------------ ROW 5 ------------>
+    <div class="row5">
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="litchie">
+            <h4>Litchie</h4>
+            <img src="img1/litchie.png" alt="Litchie">
+            <p>Lychees have a sweet, floral flavor with juicy, translucent flesh and a rough, red outer skin. Rich in
+                vitamin C, they are enjoyed fresh, in desserts, or as juice.</p>
+            <p><strong>Price: Rs.300</strong></p>
+            <input type="number" id="quantity-litchie" value="1" min="1">
+            <button class="add-to-cart" data-name="Litchie" data-price="300" data-image="img1/litchie.png">Add to
+                Cart</button>
+
+        </div>
+
+        <div class="card" id="mango" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450">
+            <h4>Mango</h4>
+            <img src="img1/mango.png" alt="Mango">
+            <p>Mangoes have a rich, sweet, and juicy flavor with a smooth, creamy texture. They are high in vitamins A
+                and C, and are delicious fresh, in smoothies, and desserts.</p>
+            <p><strong>Price: Rs.70</strong></p>
+            <input type="number" id="quantity-mango" value="1" min="1">
+            <button class="add-to-cart" data-name="Mango" data-price="70" data-image="img1/mango.png">Add to
+                Cart</button>
+
+        </div>
+
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="mulberry">
+            <h4>Mulberry</h4>
+            <img src="img1/mulberry.png" alt="Mulberry">
+            <p>Mulberries are sweet, juicy berries with a slightly tart flavor and a high nutritional value. Rich in
+                vitamins, minerals, and antioxidants, they are great fresh or dried.</p>
+            <p><strong>Price: Rs.350</strong></p>
+            <input type="number" id="quantity-mulberry" value="1" min="1">
+            <button class="add-to-cart" data-name="Mulberry" data-price="350" data-image="img1/mulberry.png">Add to
+                Cart</button>
+
+        </div>
+
+        <div class="card" id="orange" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450">
+            <h4>Orange</h4>
+            <img src="img1/orange.png" alt="Orange">
+            <p>Oranges are juicy, sweet citrus fruits packed with vitamin C and antioxidants. They are enjoyed fresh,
+                juiced, or in various culinary dishes and desserts.</p>
+            <p><strong>Price: Rs.70</strong></p>
+            <input type="number" id="quantity-orange" value="1" min="1">
+            <button class="add-to-cart" data-name="Orange" data-price="70" data-image="img1/orange.png">Add to
+                Cart</button>
+
+        </div>
+    </div>
+
+    <!------------ ROW 6 ------------>
+    <div class="row6">
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="papaya">
+            <h4>Papaya</h4>
+            <img src="img1/papaya.png" alt="Papaya">
+            <p>Papayas have sweet, musky flesh with a buttery texture and numerous black seeds. High in vitamins A and
+                C, they are great for fresh eating, smoothies, and salads.</p>
+            <p><strong>Price: Rs.90</strong></p>
+            <input type="number" id="quantity-papaya" value="1" min="1">
+            <button class="add-to-cart" data-name="Papaya" data-price="90" data-image="img1/papaya.png">Add to
+                Cart</button>
+
+        </div>
+
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="peach">
+            <h4>Peach</h4>
+            <img src="img1/peach 2.png" alt="Peach">
+            <p>Peaches have juicy, sweet flesh with a slight tang and velvety skin. Rich in vitamins and antioxidants,
+                they are perfect for fresh eating, baking, and canning.</p>
+            <p><strong>Price: Rs.230</strong></p>
+            <input type="number" id="quantity-peach" value="1" min="1">
+            <button class="add-to-cart" data-name="Peach" data-price="230" data-image="img1/peach 2.png">Add to
+                Cart</button>
+
+        </div>
+
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="pineapple">
+            <h4>Pineapple</h4>
+            <img src="img1/pine apple.png" alt="Pineapple">
+            <p>Pineapples have a sweet and tangy flavor with a fibrous, juicy flesh. High in vitamin C and manganese,
+                they are enjoyed fresh, juiced, or in savory and sweet dishes.</p>
+            <p><strong>Price: Rs.90</strong></p>
+            <input type="number" id="quantity-pineapple" value="1" min="1">
+            <button class="add-to-cart" data-name="Pineapple" data-price="90" data-image="img1/pine apple.png">Add to
+                Cart</button>
+
+        </div>
+
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="plum">
+            <h4>Plum</h4>
+            <img src="img1/plum.png" alt="Plum">
+            <p>Plums have a sweet-tart flavor with juicy flesh and smooth skin. Rich in vitamins and antioxidants, they
+                are perfect for fresh eating, baking, and making jams.</p>
+            <p><strong>Price: Rs.280</strong></p>
+            <input type="number" id="quantity-plum" value="1" min="1">
+            <button class="add-to-cart" data-name="Plum" data-price="280" data-image="img1/plum.png">Add to
+                Cart</button>
+
+        </div>
+    </div>
+    <!------------ ROW 7 ------------>
+    <div class="row7">
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="pomegranate">
+            <h4>Pomegranate</h4>
+            <img src="img1/pome.png" alt="Pomegranate">
+            <p>Pomegranates have jewel-like seeds with a sweet-tart flavor, known for their health benefits. High in
+                antioxidants and vitamins, they are great fresh, juiced, or in salads.</p>
+            <p><strong>Price: Rs.130</strong></p>
+            <input type="number" id="quantity-pomegranate" value="1" min="1">
+            <button class="add-to-cart" data-name="Pomegranate" data-price="130" data-image="img1/pome.png">Add to
+                Cart</button>
+
+        </div>
+
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="raspberry">
+            <h4>Raspberry</h4>
+            <img src="img1/rasp berry.png" alt="Raspberry">
+            <p>Raspberries are delicate, sweet-tart berries rich in vitamins, fiber, and antioxidants. They are perfect
+                for fresh eating, desserts, and jams.</p>
+            <p><strong>Price: Rs.1400</strong></p>
+            <input type="number" id="quantity-raspberry" value="1" min="1">
+            <button class="add-to-cart" data-name="Raspberry" data-price="1400" data-image="img1/rasp berry.png">Add to
+                Cart</button>
+
+        </div>
+
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="red-grapes">
+            <h4>Red Grapes</h4>
+            <img src="img1/red grapes.png" alt="Red Grapes">
+            <p>Red grapes are sweet, juicy, and slightly tart, high in vitamins and antioxidants. Ideal for snacking,
+                salads, and winemaking.</p>
+            <p><strong>Price: Rs.80</strong></p>
+            <input type="number" id="quantity-red-grapes" value="1" min="1">
+            <button class="add-to-cart" data-name="Red Grapes" data-price="80" data-image="img1/red grapes.png">Add to
+                Cart</button>
+
+        </div>
+
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="strawberry">
+            <h4>Strawberry</h4>
+            <img src="img1/strawberry.png" alt="Strawberry">
+            <p>Strawberries are bright red, juicy fruits with a sweet flavor. Rich in vitamin C and antioxidants, they
+                are delicious fresh, in desserts, and smoothies.</p>
+            <p><strong>Price: Rs.420</strong></p>
+            <input type="number" id="quantity-strawberry" value="1" min="1">
+            <button class="add-to-cart" data-name="Strawberry" data-price="420" data-image="img1/strawberry.png">Add to
+                Cart</button>
+
+        </div>
+    </div>
+
+    <!------------ ROW 8 ------------>
+    <div class="row8">
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="watermelon">
+            <h4>Watermelon</h4>
+            <img src="img1/watermelon.png" alt="Watermelon">
+            <p>Watermelons have sweet, juicy flesh with a refreshing flavor and high water content. Perfect for
+                hydrating snacks, salads, and drinks.</p>
+            <p><strong>Price: Rs.25</strong></p>
+            <input type="number" id="quantity-watermelon" value="1" min="1">
+            <button class="add-to-cart" data-name="Watermelon" data-price="25" data-image="img1/watermelon.png">Add to
+                Cart</button>
+
+        </div>
+
+        <div class="card" data-aos="fade-in" data-aos-duration="200" data-aos-delay="450" id="wine-grapes">
+            <h4>Wine Grapes</h4>
+            <img src="img1/wine grapes.png" alt="Wine Grapes">
+            <p>Wine grapes are small, sweet, and juicy, specifically cultivated for winemaking. They are rich in
+                antioxidants and flavor, used in red, white, and rosé wines.</p>
+            <p><strong>Price: Rs.120</strong></p>
+            <input type="number" id="quantity-wine-grapes" value="1" min="1">
+            <button class="add-to-cart" data-name="Wine Grapes" data-price="120" data-image="img1/wine grapes.png">Add
+                to Cart</button>
+
+        </div>
+    </div>
+
+    <!--------FRUITS END HERE--------->
+    <!--------FOOTER STARTS HERE--------->
+
+
+    <div class="footer" data-aos="fade" data-aos-duration="700" data-aos-delay="950">
+        <h1>Fresh Hunters</h1>
+        <div class="quick-links">
+            <div data-aos="fade-up-left" data-aos-duration="700" data-aos-delay="950">Our Projects</div>
+            <ul>
+                <li><a href="https://recipe-finder-phi-teal.vercel.app/" class="a-links">Recipe Finder</a></li>
+                <li><a href="https://notes-app-simple.vercel.app/" class="a-links">Note App</a></li>
+                <li><a href="https://blog-simple-reaxt.vercel.app/" class="a-links">Blog</a></li>
+            </ul>
+        </div>
+        <div class="quick-links">
+            <div data-aos="fade-up-right" data-aos-duration="700" data-aos-delay="950">Quick Links</div>
+            <ul>
+                <li><a href="https://chat.whatsapp.com/JrRFFw4NYzFGMdvUPLYnhT" class="a-links">Contact Us</a></li>
+                <li><a href="Help.html" class="a-links">Help</a></li>
+            </ul>
+        </div>
+        <div class="quick-links">
+            <div data-aos="fade-up-left" data-aos-duration="700" data-aos-delay="950">Contact Information</div>
+            <ul>
+                <li>
+                    <a href="to:arunr6506@gmail.com">
+                        Email:
+                        arunr6506@gmail.com
+                    </a>
+                </li>
+                <li>
+                    <a href="faq.html">
+                        Phone: 9047877727,<br />
+                        7598161757,<br />
+                        8220198121,<br />
+                        6385309616,<br />
+                        9361995841
+                </li>
+                </a>
+                <li>
+                    <a href="/">
+                        Address : Tiruvannamalai,Tamil Nadu, India
+                </li>
+                </a>
+            </ul>
+        </div>
+        <div class="quick-links">
+            <div data-aos="fade-up-right" data-aos-duration="700" data-aos-delay="1300">Follow Us</div>
+            <ul>
+                <li><a href="https://chat.whatsapp.com/JrRFFw4NYzFGMdvUPLYnhT" class="a-links"><i
+                            class="fab fa-whatsapp"></i>
+                        Whatsapp</a></li>
+                <li><a href="https://www.linkedin.com/in/arunraj003/" class="a-links"><i class="fab fa-linkedin"></i>
+                        LinkedIn</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="copyrights" data-aos="fade-down" data-aos-duration="400" data-aos-delay="1400">
+        <h1>
+            2023 Fresh Hunters
+            <i class="fas fa-copyright"></i> TEAM 2
+        </h1>
+    </div>
+    <!--------FOOTER END HERE--------->
+
+    <!-- ANIMATION CDN  -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            delay: true,
+        });
+    </script>
+
+    <script src="js/cart.js"></script>
+    <script src="js/navbar.js"></script>
+    <!--------FRUIT PAGE END HERE--------->
+</body>
+
+</html>

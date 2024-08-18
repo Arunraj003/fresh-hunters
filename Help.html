@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Hunters Help</title>
+    <link rel="stylesheet" href="fruits.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="icon" href="img1/fresh-hunters.png" />
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+        import {
+            getAuth,
+            onAuthStateChanged,
+            signOut,
+        } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBN9L7Gr7-oXB_JyTP7rEVYVEiQRY5bXls",
+            authDomain: "fresh-hunters.firebaseapp.com",
+            projectId: "fresh-hunters",
+            storageBucket: "fresh-hunters.appspot.com",
+            messagingSenderId: "411275754727",
+            appId: "1:411275754727:web:474fbaebec6babdba7b642",
+            measurementId: "G-LJZT6LKKE9",
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app); // Initialize Firebase Auth
+
+        // Check if user is signed in
+        onAuthStateChanged(auth, (user) => {
+            if (user == login) {
+                document.getElementById(
+                    alert(`Welcome, ${user.email}`)
+                )
+            } else {
+                window.location.href = "login.html";
+            }
+        });
+
+        // Logout function
+        window.logout = function () {
+            signOut(auth)
+                .then(() => {
+                    window.location.href = "login.html";
+                })
+                .catch((error) => {
+                    alert(error.message);
+                });
+        };
+    </script>
+    <link rel="icon" href="img1/fresh-hunters.png" />
+</head>
+
+<body>
+
+    <!-- header starts here -->
+    <div class="para">
+        <div class="page-title">Fresh Hunters</div>
+    </div>
+
+    <!-- navbar  -->
+    <div class="menu">
+        <a href="#" class="logo">
+            Fresh Hunters <img src="img1/fresh-hunters.png" alt="logo" />
+        </a>
+        <ul class="menu-ul">
+            <a href="Home.html" class="a-menu">
+                <li>Home</li>
+            </a>
+            <a href="vegetables.html" class="a-menu">
+                <li>Vegetables</li>
+            </a>
+            <a href="cart.html" class="a-menu">
+                <li>Your Items</li>
+            </a>
+            <a onClick="logout()" class="a-menu">
+                <li>LogOut</li>
+            </a>
+        </ul>
+    </div>
+    <!-- sidebar -->
+    <div class="sidebar" id="sidebar">
+        <i class="fa fa-bars"></i>
+    </div>
+    <div class="box" id="box">
+        <i class="fa fa-xmark" id="close"></i>
+        <ul class="menu-ul">
+            <a href="Home.html" class="a-menu">
+                <li>Home</li>
+            </a>
+            <a href="vegetables.html" class="a-menu">
+                <li>Vegetables</li>
+            </a>
+            <a href="cart.html" class="a-menu">
+                <li>Your Items</li>
+            </a>
+            <a onClick="logout()" class="a-menu">
+                <li>LogOut</li>
+            </a>
+        </ul>
+    </div>
+    <!-- header ends here  -->
+
+
+    <!-- Main content -->
+    <main>
+        <div class="help-content">
+            <h1>Welcome to Fresh Hunters Help Page</h1>
+            <p>If you need assistance, you can find the answers to common questions below or contact our support team.
+            </p>
+
+            <section class="faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3>How do I place an order?</h3>
+                    <p>To place an order, browse through our products, add items to your cart, and proceed to checkout.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3>What payment methods are accepted?</h3>
+                    <p>We accept credit/debit cards, PayPal, and other secure payment methods.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I track my order?</h3>
+                    <p>Yes, once your order is shipped, you will receive a tracking number via email.</p>
+                </div>
+                
+            </section>
+
+            <section class="contact">
+                <h2>Contact Us</h2>
+                <p>If you have any other questions, feel free to reach out to us:</p>
+                <p>Email: arunr6506@gmail.com</p>
+                <p>Email: gowthamsampath2003@gmail.com</p>
+                <p>Email: harishkumarmurugesan@gmail.com</p>
+                <p>Email: skharicreation@gmail.com</p>
+            </section>
+        </div>
+    </main>
+ <script src="js/navbar.js"></script>
+</body>
+
+</html>
